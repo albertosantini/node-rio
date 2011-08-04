@@ -2,7 +2,7 @@ RIO
 ======
 
 RIO, R Input Output, allows connecting an app with [Rserve](http://www.rforge.net/Rserve/),
-a TCP/IP server which allows other programs to use facilities of [R](http://r-project.org).
+a TCP/IP server which allows other programs to use facilities of [R](http://www.r-project.org).
 
 It supports double, double array, string and string array objects.
 
@@ -35,7 +35,7 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install rio
 
-Tested with node 0.4.10 and Rserve 0.6.5
+Tested with node 0.4.10 and Rserve 0.6.5.
 
 Notes
 =====
