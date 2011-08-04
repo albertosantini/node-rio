@@ -55,7 +55,7 @@ Notes
 
 - It works if Rserve runs on a little endian machine.
 
-    // return jspack.Unpack(">d", buf, o); // big endian
+    return jspack.Unpack(">d", buf, o); // big endian
     return jspack.Unpack("<d", buf, o); // little endian
 
 - Adding a better error handling if the communication fails.
