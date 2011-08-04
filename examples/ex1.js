@@ -1,4 +1,5 @@
-var rio = require('rio');
+var sys = require('sys'),
+    rio = require('rio');
 
 function displayResponse(res) {
     sys.puts("Callback response: " + res);
