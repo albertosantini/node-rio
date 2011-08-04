@@ -9,7 +9,7 @@ It supports double, double array, string and string array objects.
 The main goal is to pass a string containing a script call using a JSON object 
 as parameter. Then, inside the script, using rjsonio package, deserializing
 the JSON object, calling a method, serializing the response and returning to 
-nodejs.
+NodeJS.
 
 Example
 ========
@@ -38,15 +38,33 @@ To install with [npm](http://github.com/isaacs/npm):
 
 Tested with node 0.4.10 and Rserve 0.6.5.
 
+Don't forget to start [Rserve](http://cran.r-project.org/web/packages/Rserve/).
+For instance, from R console, after installing the package Rserve:
+
+    require('Rserve')
+    Rserve()
+
+To shutdown the server from R console:
+
+    require('Rserve')
+    c <- RSconnect()
+    RSshutdown(c)
+
 Notes
 =====
 
 - It works if Rserve runs on a little endian machine.
-- Adding error handling if the communication fails.
+
+    // return jspack.Unpack(">d", buf, o); // big endian
+    return jspack.Unpack("<d", buf, o); // little endian
+
+- Adding a better error handling if the communication fails.
 
 Methods
 =======
 
 Rserve_eval(command, callback, host, port)
+-----------
 
-Eval a command, connecting to Rserve and then disconnecting.
+Evaluate a command, connecting to Rserve and then disconnecting.
+The argument of the callback is false if there is any error.
