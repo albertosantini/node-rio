@@ -12,8 +12,8 @@ var args = {
 var jsonArgsString = JSON.stringify(args);
 
 // Please, change the path of the script based on Rserve machine
-rio.Rserve_eval("setwd('/My/Dev/node-rio/examples')", function () {});
-rio.Rserve_eval("source(file='ex2.R', skip.echo=1); " +
+rio.Rserve_eval("setwd('/My/Dev/node-rio/examples'); " +
+    "source(file='ex2.R', skip.echo=1); " +
     "getOptimalPortfolio('" + jsonArgsString + "')",
     displayResponse);
 
