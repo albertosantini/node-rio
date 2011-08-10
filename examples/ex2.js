@@ -15,5 +15,5 @@ var jsonArgsString = JSON.stringify(args);
 rio.Rserve_eval("setwd('/My/Dev/node-rio/examples'); " +
     "source(file='ex2.R', skip.echo=1); " +
     "getOptimalPortfolio('" + jsonArgsString + "')",
-    displayResponse);
+    {callback: displayResponse});
 
