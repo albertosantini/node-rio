@@ -75,7 +75,7 @@ disconnecting.
 The argument of the callback is false if there is any error.
 
     default options = {
-        callback: { sys.puts(res); },
+        callback: function (res) { sys.puts(res); },
         host = "127.0.0.1",
         port = 6311,
         user = "anon",
