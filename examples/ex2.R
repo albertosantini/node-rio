@@ -41,7 +41,7 @@ getOptimalPortfolio <- function (jsonObj) {
     res <- portfolio.optim(x, pm = mean(x),
         reslow = c(0, 0, 0), reshigh = c(1, 1, 1))
 
-    return(toJSON(res$pw))
+    return(toJSON(res))
 }
 
 # args <- '{"prods":["IBM","YHOO","MSFT"]}';

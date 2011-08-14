@@ -2,7 +2,10 @@ var sys = require('sys'),
     rio = require('rio');
 
 function displayResponse(res) {
-    sys.puts("Optimal weights: " + res);
+    if (res !== false) {
+        res = JSON.parse(res);
+        sys.puts("Optimal weights: " + res.pw);
+    }
 }
 
 var args = {
