@@ -19,11 +19,11 @@ Example
 
     var rio = require('rio');
 
-    rio.Rserve_eval("pi / 2 * 2");
-    rio.Rserve_eval('c(1, 2)');
-    rio.Rserve_eval("as.character('Hello World')");
-    rio.Rserve_eval('c("a", "b")');
-    rio.Rserve_eval('Sys.sleep(5); 11')
+    rio.evaluate("pi / 2 * 2");
+    rio.evaluate('c(1, 2)');
+    rio.evaluate("as.character('Hello World')");
+    rio.evaluate('c("a", "b")');
+    rio.evaluate('Sys.sleep(5); 11')
 
 See examples directory.
 
@@ -66,8 +66,8 @@ Notes
 Methods
 =======
 
-Rserve_eval(command, options)
------------
+evaluate(command, options)
+--------
 
 Evaluate a command, connecting to Rserve, executing the command and then 
 disconnecting.
@@ -75,9 +75,24 @@ disconnecting.
 The argument of the callback is false if there is any error.
 
     default options = {
-        callback: function (res) { sys.puts(res); },
+        callback: function (res) { if (res !== false) sys.puts(res); },
         host = "127.0.0.1",
         port = 6311,
         user = "anon",
         password = "anon"
     }
+
+
+sourceAndEval(filename, options)
+-------------
+
+It loads the content of a file and call "evaluate" method.
+
+An options parameter example:
+
+    options = {
+        entryPoint: "main" // after loading the file, entryPoint would be called
+        data: { foo: "bar" } // after loading the file, data would be
+                             // stringified and would passed to the entryPoint
+    }
+

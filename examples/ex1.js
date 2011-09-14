@@ -1,7 +1,9 @@
+/*jslint node:true sloppy:true */
+
 var rio = require('rio');
 
-rio.Rserve_eval("pi / 2 * 2");
-rio.Rserve_eval('c(1, 2)');
-rio.Rserve_eval("as.character('Hello World')");
-rio.Rserve_eval('c("a", "b")');
-rio.Rserve_eval('Sys.sleep(5); 11');
+rio.evaluate("pi / 2 * 2");
+rio.evaluate('c(1, 2)');
+rio.evaluate("as.character('Hello World')");
+rio.evaluate('c("a", "b")');
+rio.evaluate('Sys.sleep(5); 11');

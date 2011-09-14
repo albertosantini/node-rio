@@ -1,3 +1,5 @@
+/*jslint node:true sloppy:true nomen:true */
+
 var sys = require('sys'),
     rio = require('rio');
 
@@ -12,11 +14,9 @@ var args = {
     prods: ["IBM", "YHOO", "MSFT"]
 };
 
-var jsonArgsString = JSON.stringify(args);
-
-// Please, change the path of the script based on Rserve machine
-rio.Rserve_eval("setwd('/My/Dev/node-rio/examples'); " +
-    "source(file='ex2.R', skip.echo=1); " +
-    "getOptimalPortfolio('" + jsonArgsString + "')",
-    {callback: displayResponse});
+rio.sourceAndEval(__dirname + "/ex2.R", {
+    entryPoint: "getOptimalPortfolio",
+    data: args,
+    callback: displayResponse
+});
 
