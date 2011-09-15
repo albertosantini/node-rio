@@ -57,6 +57,8 @@ Notes
 
     return jspack.Unpack("<d", buf, o); // little endian
 
+- If the authentication fails, the callback is not called
+
 Methods
 =======
 
