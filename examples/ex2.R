@@ -45,4 +45,9 @@ getOptimalPortfolio <- function (jsonObj) {
 }
 
 # args <- '{"prods":["IBM","YHOO","MSFT"]}';
-# print(getOptimalPortfolio(args))
+# res <- getOptimalPortfolio(args)
+# fromJSON(res)$pw
+
+# Optimal weights: 0.27107,0.2688,0.46013
+
+

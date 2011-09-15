@@ -59,8 +59,6 @@ Notes
 
 - Adding a better error handling if the communication fails.
 
-- Handling debug ouput
-
 - If the authentication fails, the callback is not called
 
 Methods
@@ -74,7 +72,9 @@ disconnecting.
 
 The argument of the callback is false if there is any error.
 
-    default options = {
+The defaults for the options parameter:
+
+    options = {
         callback: function (res) { if (res !== false) sys.puts(res); },
         host = "127.0.0.1",
         port = 6311,
@@ -86,13 +86,11 @@ The argument of the callback is false if there is any error.
 sourceAndEval(filename, options)
 -------------
 
-It loads the content of a file and call "evaluate" method.
-
-An options parameter example:
+It loads the content of a R file and calls the "evaluate" method, merging,
+finally, the options parameter:
 
     options = {
-        entryPoint: "main" // after loading the file, entryPoint would be called
-        data: { foo: "bar" } // after loading the file, data would be
-                             // stringified and would passed to the entryPoint
+        entryPoint: "main", // entryPoint is called
+        data: { foo: "bar" } // data is stringified and passed to entryPoint
     }
 

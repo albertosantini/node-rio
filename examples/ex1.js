@@ -1,6 +1,6 @@
 /*jslint node:true sloppy:true */
 
-var rio = require('rio');
+var rio = require('../lib/rio');
 
 rio.evaluate("pi / 2 * 2");
 rio.evaluate('c(1, 2)');
