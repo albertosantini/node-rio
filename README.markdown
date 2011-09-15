@@ -98,3 +98,8 @@ finally, the options parameter:
         data: { foo: "bar" } // data is stringified and passed to entryPoint
     }
 
+enableDebug(isDebug)
+-----------
+
+It enables debugging mode, printing the packet and logging messages.
+
