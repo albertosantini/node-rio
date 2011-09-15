@@ -57,10 +57,6 @@ Notes
 
     return jspack.Unpack("<d", buf, o); // little endian
 
-- Adding a better error handling if the communication fails.
-
-- If the authentication fails, the callback is not called
-
 Methods
 =======
 
@@ -75,7 +71,13 @@ The argument of the callback is false if there is any error.
 The defaults for the options parameter:
 
     options = {
-        callback: function (res) { if (res !== false) sys.puts(res); },
+        callback: function (res) {
+            if (res !== false) {
+                sys.puts(res);
+            } else {
+                sys.puts("Rserve call failed");
+            }
+        },
         host = "127.0.0.1",
         port = 6311,
         user = "anon",

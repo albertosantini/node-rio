@@ -17,6 +17,8 @@ function displayResponse(res) {
                 " is " + res.pw[i]);
         }
         // Optimal weights: 0.27107,0.2688,0.46013
+    } else {
+        sys.puts("Optimization failed");
     }
 }
 
