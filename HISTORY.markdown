@@ -1,3 +1,8 @@
+0.5.1 / 2011-09-26
+==================
+
+* Fixed a bug in sending commands loop.
+
 0.5.0 / 2011-09-25
 ==================
 
@@ -6,13 +11,13 @@
 0.4.0 / 2011-09-15
 ==================
 
-* Added enableDebug sourceAndeval methods.
+* Added enableDebug sourceAndEval methods.
 * Fixed bugs.
 
 0.3.1 / 2011-08-11
 ==================
 
-* Fixed a type in the README.
+* Fixed a typo in the README.
 
 0.3.0 / 2011-08-10
 ==================
