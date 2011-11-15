@@ -1,3 +1,8 @@
+0.5.2 / 2011-11-15
+==================
+
+* Fixed data packet with length 16 bytes.
+
 0.5.1 / 2011-09-26
 ==================
 
@@ -27,7 +32,7 @@
 0.2.0 / 2011-08-08
 ==================
 
-* Fixed an issue with the length of the packet because string and buffer were 
+* Fixed an issue with the length of the packet because string and buffer were
 mixed.
 
 0.1.0 / 2011-08-04
