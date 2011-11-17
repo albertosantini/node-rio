@@ -1,8 +1,13 @@
+0.5.6 / 2011-11-17
+==================
+
+* Fixed the copy in splitted packet.
+
 0.5.5 / 2011-11-17
 ==================
 
 * Fixed mangling a byte in the splitted packet.
-* 0.5.4 was 0.5.3.
+* 0.5.4 tag was 0.5.3 one.
 
 0.5.3 / 2011-11-17
 ==================
