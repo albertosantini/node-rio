@@ -9,9 +9,9 @@ It supports double, double array, string and string array objects.
 It supports also the plain text authentication, if Rserve is configured for that
 capability.
 
-The main goal is to pass a string containing a script call using a JSON object 
+The main goal is to pass a string containing a script call using a JSON object
 as parameter. Then, inside the script, using rjsonio package, deserializing
-the JSON object, calling a method, serializing the response and returning to 
+the JSON object, calling a method, serializing the response and returning to
 NodeJS.
 
 Example
@@ -34,7 +34,7 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install rio
 
-Tested with node 0.4.10 and Rserve 0.6.5 (on Windows 7).
+Tested with node 0.4.12 and Rserve 0.6.5 (on Windows 7).
 
 Don't forget to start [Rserve](http://cran.r-project.org/web/packages/Rserve/).
 For instance, from R console, after installing the package Rserve:
@@ -65,7 +65,7 @@ Methods
 evaluate(command, options)
 --------
 
-Evaluate a command, connecting to Rserve, executing the command and then 
+Evaluate a command, connecting to Rserve, executing the command and then
 disconnecting.
 
 The argument of the callback is false if there is any error.
