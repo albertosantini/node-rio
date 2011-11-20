@@ -51,13 +51,7 @@ To shutdown the server from R console:
 Notes
 =====
 
-- It works if Rserve runs on a little endian machine.
-
-    return jspack.Unpack(">d", buf, o); // big endian
-
-    return jspack.Unpack("<d", buf, o); // little endian
-
-- If the authentication fails, the callback is not called
+- If the authentication fails, sometimes the callback is not called.
 
 Methods
 =======
