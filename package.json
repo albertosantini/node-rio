@@ -1,7 +1,7 @@
 {
     "name" : "rio",
     "description" : "Integration with Rserve, a TCP/IP server for R framework",
-    "version" : "0.5.6",
+    "version" : "0.6.0",
     "main" : "index",
     "repository" : "http://github.com/albertosantini/node-rio",
     "keywords": ["Rserve", "R framework"],
@@ -14,7 +14,8 @@
     ],
     "engines" : { "node" : ">=0.4.x" },
     "dependencies" : {
-        "hexy" : ">=0.2.1"
+        "hexy" : ">=0.2.1",
+        "binary" : ">=0.2.6"
     }
 }
 
