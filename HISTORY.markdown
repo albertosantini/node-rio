@@ -3,6 +3,11 @@
 
 * Refactored the data handler using node-binary.
 
+0.5.6 / 2011-11-17
+==================
+
+* Fixed the copy in splitted packet.
+
 0.5.5 / 2011-11-17
 ==================
 
