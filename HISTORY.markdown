@@ -1,3 +1,9 @@
+0.6.1 / 2012-06-25
+==================
+
+* Fixed History doc for unintentional deletion.
+* Changed sys to util require for compatibility with 0.6.x and higher.
+
 0.6.0 / 2011-11-20
 ==================
 
