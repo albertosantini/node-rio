@@ -69,9 +69,9 @@ The defaults for the options parameter:
     options = {
         callback: function (res) {
             if (res !== false) {
-                sys.puts(res);
+                util.puts(res);
             } else {
-                sys.puts("Rserve call failed");
+                util.puts("Rserve call failed");
             }
         },
         host = "127.0.0.1",
