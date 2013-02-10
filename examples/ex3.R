@@ -17,7 +17,7 @@ hackZeroes <- function (x) {
 }
 
 getLogReturns <- function (symbol, start, end) {
-    assetPrice <- coredata(get.hist.quote(symbol,
+    assetPrice <- as.vector(get.hist.quote(symbol,
         start=start, end=end,
         compression="w", quote="Close", quiet=TRUE))
     assetPrice <- hackZeroes(assetPrice)
