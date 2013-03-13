@@ -1,21 +1,29 @@
 {
-    "name" : "rio",
-    "description" : "Integration with Rserve, a TCP/IP server for R framework",
-    "version" : "0.6.2",
-    "main" : "index",
-    "repository" : "http://github.com/albertosantini/node-rio",
+    "name": "rio",
+    "description": "Integration with Rserve, a TCP/IP server for R framework",
+    "version": "0.6.2",
+    "main": "index",
+    "repository": "http://github.com/albertosantini/node-rio",
     "keywords": ["Rserve", "R framework"],
-    "author" : "Alberto Santini",
+    "author": "Alberto Santini",
     "licenses": [
         {
            "type": "MIT",
            "url": "http://github.com/albertosantini/node-rio/raw/master/LICENSE"
         }
     ],
-    "engines" : { "node" : ">=0.8.x" },
-    "dependencies" : {
-        "hexy" : ">=0.2.4",
-        "binary" : ">=0.3.0"
+    "engines": {
+        "node": ">=0.8.x"
+    },
+    "dependencies": {
+        "hexy": ">=0.2.4",
+        "binary": ">=0.3.0"
+    },
+    "scripts": {
+        "test": "vows --spec"
+    },
+    "devDependencies": {
+        "vows": "~0.7.0"
     }
 }
 

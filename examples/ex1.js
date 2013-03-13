@@ -1,10 +1,13 @@
-/*jslint node:true sloppy:true */
+/* jshint node:true */
 
 var rio = require('../lib/rio');
 
 // rio.enableDebug(true);
-rio.evaluate("pi / 2 * 2");
+// rio.enableRecordMode(true, {fileName: 'dump.bin'});
+// rio.enablePlaybackMode(true, {fileName: 'dump.bin'});
+
+rio.evaluate('pi / 2 * 2');
 rio.evaluate('c(1, 2)');
-rio.evaluate("as.character('Hello World')");
+rio.evaluate('as.character('Hello World')');
 rio.evaluate('c("a", "b")');
 rio.evaluate('Sys.sleep(5); 11');

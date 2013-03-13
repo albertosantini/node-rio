@@ -1,5 +1,6 @@
 RIO
 ======
+[![Build Status](https://travis-ci.org/albertosantini/node-rio.png)](https://travis-ci.org/albertosantini/node-rio)
 
 RIO, R Input Output, connects an app to [Rserve](http://www.rforge.net/Rserve/),
 a TCP/IP server which allows other programs to use facilities of [R](http://www.r-project.org).
@@ -34,7 +35,7 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install rio
 
-Tested with node 0.8.22 and Rserve 0.6.8 (on Windows 7) with R 2.15.3.
+Tested with node 0.10.0 and Rserve 0.6.8 (on Windows 7) with R 2.15.3.
 
 Don't forget to start [Rserve](http://cran.r-project.org/web/packages/Rserve/).
 For instance, from R console, after installing the package Rserve:
@@ -48,11 +49,6 @@ To shutdown the server from R console:
     c <- RSconnect()
     RSshutdown(c)
 
-Notes
-=====
-
-- If the authentication fails, sometimes the callback is not called.
-
 Methods
 =======
 
@@ -62,13 +58,11 @@ evaluate(command, options)
 Evaluate a command, connecting to Rserve, executing the command and then
 disconnecting.
 
-The argument of the callback is false if there is any error.
-
 The defaults for the options parameter:
 
     options = {
-        callback: function (res) {
-            if (res !== false) {
+        callback: function (err, res) {
+            if (err) {
                 util.puts(res);
             } else {
                 util.puts("Rserve call failed");
@@ -97,3 +91,21 @@ enableDebug(isDebug)
 
 It enables debugging mode, printing the packet and logging messages.
 
+enableRecordMode(isRecordMode, options)
+----------------
+
+It enables record mode, dumping the incoming data to a file specified in the
+options.
+
+    options = {
+        fileName: "node-rio-dump.bin"
+    }
+
+enablePlaybackMode(isPlaybackMode, options)
+------------------
+
+It enables playback mode, reading a dump file instead connecting to the server.
+
+    options = {
+        fileName: "node-rio-dump.bin"
+    }
