@@ -7,10 +7,10 @@ var args = {
     prods: ["IBM", "YHOO", "MSFT"]
 };
 
-function displayResponse(res) {
+function displayResponse(err, res) {
     var i;
 
-    if (res !== false) {
+    if (!err) {
         res = JSON.parse(res);
         for (i = 0; i < args.prods.length; i += 1) {
             util.puts("Optimal weight for " + args.prods[i] +

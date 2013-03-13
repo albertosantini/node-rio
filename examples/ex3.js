@@ -24,10 +24,10 @@ function getOptimalPortfolio(params, callback, config) {
         cfg.password = config.password;
     }
 
-    cfg.callback = function (res) {
+    cfg.callback = function (err, res) {
         var mess, ans = {};
 
-        if (res !== false) {
+        if (!err) {
             ans = JSON.parse(res);
         } else {
             mess = "Rserve call failed";
