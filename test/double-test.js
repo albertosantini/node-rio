@@ -19,7 +19,7 @@ vows.describe('Tests').addBatch({
         },
 
         'get the double number': function (err, topic) {
-            if (err !== false) {
+            if (!err) {
                 assert.equal(3.141592653589793, topic);
             }
         }
@@ -37,7 +37,7 @@ vows.describe('Tests').addBatch({
         },
 
         'get the double number array': function (err, topic) {
-            if (err !== false) {
+            if (!err) {
                 assert.deepEqual([1, 2], topic);
             }
         }
@@ -55,7 +55,7 @@ vows.describe('Tests').addBatch({
         },
 
         'get the string': function (err, topic) {
-            if (err !== false) {
+            if (!err) {
                 assert.equal('Hello World', topic);
             }
         }
@@ -73,7 +73,7 @@ vows.describe('Tests').addBatch({
         },
 
         'get the array string': function (err, topic) {
-            if (err !== false) {
+            if (!err) {
                 assert.deepEqual(['a', 'b'], topic);
             }
         }
