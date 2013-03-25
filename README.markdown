@@ -11,7 +11,7 @@ It supports also the plain text authentication, if Rserve is configured for that
 capability.
 
 The main goal is to pass a string containing a script call using a JSON object
-as parameter. Then, inside the script, using rjsonio package, deserializing
+as parameter. Then, inside the script, using RJSONIO package, deserializing
 the JSON object, calling a method, serializing the response and returning to
 NodeJS.
 
