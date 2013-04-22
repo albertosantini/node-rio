@@ -1,7 +1,7 @@
-/*jslint node:true sloppy:true nomen:true */
+"use strict";
 
-var util = require('util'),
-    rio = require('../lib/rio');
+var util = require("util"),
+    rio = require("../lib/rio");
 
 var args = {
     prods: ["IBM", "YHOO", "MSFT"]
