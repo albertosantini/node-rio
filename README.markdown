@@ -35,7 +35,7 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install rio
 
-Tested with node 0.10.0 and Rserve 0.6.8 (on Windows 7) with R 2.15.3.
+Tested with node 0.10.4 and Rserve 0.6.8 (on Windows 7) with R 3.0.0.
 
 Don't forget to start [Rserve](http://cran.r-project.org/web/packages/Rserve/).
 For instance, from R console, after installing the package Rserve:

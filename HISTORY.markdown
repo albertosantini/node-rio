@@ -1,8 +1,12 @@
+0.8.0 / 2013-04-23
+==================
+
+* Added utf8 support.
+
 0.7.0 / 2013-03-13
 ==================
 
 * Added tests without needing Rserve.
-
 * Added the err argument in the callback.
 
 0.6.2 / 2013-03-08

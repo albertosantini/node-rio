@@ -1,4 +1,5 @@
 .git*
 examples/
 test/
-
+.travis.yml
+.jshintrc
