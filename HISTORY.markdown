@@ -1,3 +1,9 @@
+0.8.1 / 2013-05-23
+==================
+
+* Fixed utf8 support in the response.
+* Added keepalive for long running processes.
+
 0.8.0 / 2013-04-23
 ==================
 
