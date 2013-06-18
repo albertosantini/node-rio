@@ -53,7 +53,7 @@ Methods
 =======
 
 evaluate(command, options)
---------
+--------------------------
 
 Evaluate a command, connecting to Rserve, executing the command and then
 disconnecting.
@@ -80,7 +80,8 @@ Either define `path`, the path of a Unix socket, or `host`/`port`.
 shutdown(options)
 -----------------
 
-Sends the `CMD_shutdown` command to the Rserve server. Options are the same as for `evaluate`.
+Sends the `CMD_shutdown` command to the Rserve server. Options are the same as
+for `evaluate`.
 
 sourceAndEval(filename, options)
 -------------
