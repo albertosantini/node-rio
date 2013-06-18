@@ -1,3 +1,9 @@
+0.9.0 / 2013-06-18
+==================
+
+* Connect to Rserve on socket as well as tcp/ip port.
+* Add shutdown command.
+
 0.8.1 / 2013-05-23
 ==================
 
