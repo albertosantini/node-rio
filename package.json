@@ -1,29 +1,34 @@
 {
-    "name": "rio",
-    "description": "Integration with Rserve, a TCP/IP server for R framework",
-    "version": "0.9.0",
-    "main": "index",
-    "repository": "http://github.com/albertosantini/node-rio",
-    "keywords": ["Rserve", "R framework"],
-    "author": "Alberto Santini",
-    "licenses": [
-        {
-           "type": "MIT",
-           "url": "http://github.com/albertosantini/node-rio/raw/master/LICENSE"
-        }
-    ],
-    "engines": {
-        "node": ">=0.8.x"
-    },
-    "dependencies": {
-        "hexy": ">=0.2.5",
-        "binary": ">=0.3.0"
-    },
-    "scripts": {
-        "test": "vows --spec"
-    },
-    "devDependencies": {
-        "vows": "~0.7.0"
+  "name": "rio",
+  "description": "Integration with Rserve, a TCP/IP server for R framework",
+  "version": "0.9.0",
+  "main": "index",
+  "repository": "http://github.com/albertosantini/node-rio",
+  "keywords": [
+    "Rserve",
+    "R framework"
+  ],
+  "author": "Alberto Santini",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/albertosantini/node-rio/raw/master/LICENSE"
     }
+  ],
+  "engines": {
+    "node": ">=0.8.x"
+  },
+  "dependencies": {
+    "hexy": ">=0.2.5",
+    "binary": ">=0.3.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "devDependencies": {
+    "vows": "~0.7.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-vows-runner": "~0.5.2"
+  }
 }
-
