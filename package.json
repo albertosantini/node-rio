@@ -9,7 +9,7 @@
     "R framework"
   ],
   "author": "Alberto Santini",
-  "licenses": "MIT",
+  "license": "MIT",
   "engines": {
     "node": ">=0.8.x"
   },
