@@ -70,7 +70,7 @@ The defaults for the options parameter:
         },
         host = "127.0.0.1",
         port = 6311,
-        path = undefined
+        path = undefined,
         user = "anon",
         password = "anon"
     }
