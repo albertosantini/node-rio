@@ -14,12 +14,10 @@ module.exports = function (grunt) {
 
         vows: {
             all: {
+                src: "test/*.js",
                 options: {
                     reporter: "spec"
-                },
-                src: [
-                    "test/*.js"
-                ]
+                }
             }
         }
     });
