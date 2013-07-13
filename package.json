@@ -25,6 +25,6 @@
         "grunt": "~0.4.1",
         "grunt-cli": "~0.1",
         "grunt-contrib-jshint": "~0.6.0",
-        "grunt-vows-runner": "~0.5.2"
+        "grunt-vows-runner": "~0.6.0"
     }
 }
