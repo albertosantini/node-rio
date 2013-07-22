@@ -4,9 +4,6 @@ RIO
 [![NPM version](https://badge.fury.io/js/rio.png)](http://badge.fury.io/js/rio)
 [![NGN Dependencies](https://david-dm.org/albertosantini/node-rio.png)](https://david-dm.org/albertosantini/node-rio)
 
-[![NPM](https://nodei.co/npm/rio.png?downloads=true)](https://nodei.co/npm/rio/)
-[![NPM](https://nodei.co/npm-dl/rio.png)](https://nodei.co/npm/rio/)
-
 RIO, R Input Output, connects an app to [Rserve](http://www.rforge.net/Rserve/),
 a TCP/IP server which allows other programs to use facilities of [R](http://www.r-project.org).
 
@@ -35,6 +32,9 @@ See examples directory.
 
 Installation
 ============
+
+[![NPM](https://nodei.co/npm/rio.png?downloads=true)](https://nodei.co/npm/rio/)
+[![NPM](https://nodei.co/npm-dl/rio.png)](https://nodei.co/npm/rio/)
 
 To install with [npm](http://github.com/isaacs/npm):
 
