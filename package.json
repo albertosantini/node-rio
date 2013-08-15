@@ -14,8 +14,8 @@
         "node": ">=0.8.x"
     },
     "dependencies": {
-        "binary": ">=0.3.0",
-        "vows": "~0.7.0"
+        "binary": "~0.3.0",
+        "hexy": "~0.2.5"
     },
     "scripts": {
         "test": "grunt"
