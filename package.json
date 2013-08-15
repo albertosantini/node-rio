@@ -14,17 +14,17 @@
         "node": ">=0.8.x"
     },
     "dependencies": {
-        "hexy": ">=0.2.5",
-        "binary": ">=0.3.0"
+        "binary": ">=0.3.0",
+        "vows": "~0.7.0"
     },
     "scripts": {
         "test": "grunt"
     },
     "devDependencies": {
-        "vows": "~0.7.0",
         "grunt": "~0.4.1",
-        "grunt-cli": "~0.1",
-        "grunt-contrib-jshint": "~0.6.0",
-        "grunt-vows-runner": "~0.6.0"
+        "grunt-cli": "~0.1.9",
+        "grunt-contrib-jshint": "~0.6.2",
+        "grunt-vows-runner": "~0.6.0",
+        "vows": "~0.7.0"
     }
 }
