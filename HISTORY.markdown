@@ -1,8 +1,16 @@
+0.10.0 / 2013-08-18
+===================
+
+* Added transfer file support.
+* Fixed callback err value if sexp type is not implemented.
+* Added contributing doc.
+* Added npm stats, dependencies and version badges.
+
 0.9.0 / 2013-06-18
 ==================
 
-* Connect to Rserve on socket as well as tcp/ip port.
-* Add shutdown command.
+* Added Rserve connection on socket as well as tcp/ip port.
+* Added shutdown command.
 
 0.8.1 / 2013-05-23
 ==================
