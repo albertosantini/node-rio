@@ -1,12 +1,10 @@
-/* jshint node:true */
-
 "use strict";
 
 var rio = require("../lib/rio"),
     vows = require("vows"),
     assert = require("assert");
 
-vows.describe("Tests").addBatch({
+vows.describe("Basic tests").addBatch({
     "double number test": {
         topic: function () {
             rio.enablePlaybackMode(true, {
