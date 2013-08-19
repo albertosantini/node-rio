@@ -4,7 +4,7 @@ var rio = require("../lib/rio"),
     vows = require("vows"),
     assert = require("assert");
 
-var isEnablePlaybackMode = process.env.CI === true;
+var isEnablePlaybackMode = process.env.CI === 'true';
 
 vows.describe("Basic tests").addBatch({
     "double number test": {
