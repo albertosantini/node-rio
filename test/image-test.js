@@ -6,10 +6,12 @@ var rio = require("../lib/rio"),
     vows = require("vows"),
     assert = require("assert");
 
+var isEnablePlaybackMode = process.env.CI === true;
+
 vows.describe("Image tests").addBatch({
     "first image test": {
         topic: function () {
-            rio.enablePlaybackMode(true, {
+            rio.enablePlaybackMode(isEnablePlaybackMode, {
                 fileName: "test/image-test.bin"
             });
 
