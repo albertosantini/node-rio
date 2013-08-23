@@ -51,7 +51,7 @@ For instance, from R console, after installing the package Rserve:
 
 To shutdown the server from R console:
 
-    require('Rserve')
+    require('RSclient')
     c <- RSconnect()
     RSshutdown(c)
 
