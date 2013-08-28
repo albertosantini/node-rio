@@ -123,3 +123,19 @@ It enables playback mode, reading a dump file instead connecting to the server.
     options = {
         fileName: "node-rio-dump.bin"
     }
+
+Contributors
+============
+
+```
+ project  : node-rio
+ repo age : 2 years, 1 month
+ active   : 42 days
+ commits  : 103
+ files    : 28
+ authors  :
+    98  icebox                  95.1%
+     2  Anand Patil             1.9%
+     2  albertosantini          1.9%
+     1  Farrin Reid             1.0%
+```
