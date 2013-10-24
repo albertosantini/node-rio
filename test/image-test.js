@@ -19,7 +19,7 @@ vows.describe("Image tests").addBatch({
                 'png(filename)\n' +
                 'plot(1:10)\n' +
                 'dev.off()\n' +
-                'image <- readBin(filename, "raw", 9999)\n' +
+                'image <- readBin(filename, "raw", 29999)\n' +
                 'unlink(filename)\n' +
                 'image\n', {
                 callback: this.callback
@@ -28,7 +28,8 @@ vows.describe("Image tests").addBatch({
 
         "get image": function (err, topic) {
             if (!err) {
-                assert.equal(topic.length, 2259);
+                // the length depends on graphics system used
+                assert(topic.length >= 2259);
             }
         }
     }
