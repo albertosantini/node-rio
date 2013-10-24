@@ -31,6 +31,14 @@ Example
 
 See examples directory.
 
+- `ex1`: Getting started with `evaluate` api.
+- `ex2`: How to evaluate a script, to call a function passing params with
+`sourceAndEval`.
+- `ex3`: How to call `sourceAndEval` with a config object including connection
+details.
+- `ex4`: An example with utf-8 chars.
+- `ex5`: How to retrieve a plot.
+
 Installation
 ============
 
