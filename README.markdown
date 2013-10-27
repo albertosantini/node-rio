@@ -29,7 +29,7 @@ Example
     rio.evaluate('c("a", "b")');
     rio.evaluate('Sys.sleep(5); 11')
 
-See examples directory.
+See `examples` directory.
 
 - `ex1`: Getting started with `evaluate` api.
 - `ex2`: How to evaluate a script, to call a function passing params with
@@ -49,7 +49,7 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install rio
 
-Tested with node 0.10.17 and Rserve 1.7.3 (on Windows 7) with R 3.0.1.
+Tested with node 0.10.21 and Rserve 1.7.3 (on Windows 7) with R 3.0.2.
 
 Don't forget to start [Rserve](http://cran.r-project.org/web/packages/Rserve/).
 For instance, from R console, after installing the package Rserve:
@@ -136,14 +136,14 @@ Contributors
 ============
 
 ```
- project  : node-rio
- repo age : 2 years, 1 month
- active   : 42 days
- commits  : 103
- files    : 28
- authors  :
-    98  icebox                  95.1%
-     2  Anand Patil             1.9%
-     2  albertosantini          1.9%
-     1  Farrin Reid             1.0%
+project  : node-rio
+repo age : 2 years, 3 months
+active   : 46 days
+commits  : 109
+files    : 28
+authors  :
+  104  icebox                  95.4%
+    2  Anand Patil             1.8%
+    2  albertosantini          1.8%
+    1  Farrin Reid             0.9%
 ```
