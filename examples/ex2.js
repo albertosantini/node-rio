@@ -2,7 +2,7 @@
 
 var util = require("util"),
     rio = require("../lib/rio");
-
+rio.enableDebug(true);
 var args = {
     prods: ["IBM", "YHOO", "MSFT"]
 };
