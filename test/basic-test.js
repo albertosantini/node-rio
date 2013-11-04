@@ -96,6 +96,26 @@ vows.describe("Basic tests").addBatch({
                 assert.equal("Hello World", topic);
             }
         }
+    },
+
+    "cound not find a function test": {
+        topic: function () {
+            var args = {
+                prods: ["IBM", "YHOO", "MSFT"]
+            }, self = this;
+            rio.sourceAndEval(__dirname + "/test.R", {
+                entryPoint: "getOptimalPortfolio",
+                data: args,
+                callback: function (err, res) {
+                    console.log(err, res);
+                    self.callback(err);
+                }
+            });
+        },
+
+        "get closed but no response value returned": function (err) {
+            assert.ok(err);
+        }
     }
 
 }).export(module);
