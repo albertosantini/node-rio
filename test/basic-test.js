@@ -79,6 +79,42 @@ vows.describe("Basic tests").addBatch({
         }
     },
 
+    "boolean test": {
+        topic: function () {
+            rio.enablePlaybackMode(isEnablePlaybackMode, {
+                fileName: "test/boolean-test.bin"
+            });
+
+            rio.evaluate("TRUE", {
+                callback: this.callback
+            });
+        },
+
+        "get the boolean value": function (err, topic) {
+            if (!err) {
+                assert.equal(true, topic);
+            }
+        }
+    },
+
+    "boolean array test": {
+        topic: function () {
+            rio.enablePlaybackMode(isEnablePlaybackMode, {
+                fileName: "test/boolean-array-test.bin"
+            });
+
+            rio.evaluate("c(TRUE, FALSE)", {
+                callback: this.callback
+            });
+        },
+
+        "get the boolean array": function (err, topic) {
+            if (!err) {
+                assert.deepEqual([true, false], topic);
+            }
+        }
+    },
+
     "utf8 string test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
