@@ -1,3 +1,10 @@
+1.1.0 / 2013-11-06
+==================
+
+* Added boolean support.
+* Added eval response and data type check.
+* Added eval errors tests.
+
 1.0.0 / 2013-10-27
 ==================
 
