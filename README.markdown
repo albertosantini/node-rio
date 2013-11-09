@@ -91,22 +91,29 @@ The defaults for the options parameter:
 
 Either define `path`, the path of a Unix socket, or `host`/`port`.
 
-shutdown(options)
------------------
-
-Sends the `CMD_shutdown` command to the Rserve server. Options are the same as
-for `evaluate`.
 
 sourceAndEval(filename, options)
 -------------
 
-It loads the content of a R file and calls the "evaluate" method, merging,
+It loads the content of a R file and calls the `evaluate` method, merging,
 finally, the options parameter:
 
     options = {
         entryPoint: "main", // entryPoint is called
         data: { foo: "bar" } // data is stringified and passed to entryPoint
     }
+
+bufferAndEval(buffer, options)
+-------------
+
+It is an helper method to call `evaluate`, adding to the buffer string, the call
+of the entry point. Options are the same as for `evaluate`.
+
+shutdown(options)
+-----------------
+
+Sends the `CMD_shutdown` command to the Rserve server. Options are the same as
+for `evaluate`.
 
 enableDebug(isDebug)
 -----------
