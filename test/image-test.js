@@ -12,7 +12,7 @@ vows.describe("Image tests").addBatch({
     "first image test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/image-test.bin"
+                fileName: "test/dump/image-test.bin"
             });
 
             rio.evaluate('filename <- tempfile("plot", fileext = ".png")\n' +

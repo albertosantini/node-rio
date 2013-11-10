@@ -12,7 +12,7 @@ vows.describe("Eval errors tests").addBatch({
     "require test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/require-test.bin"
+                fileName: "test/dump/require-test.bin"
             });
 
             rio.evaluate("require(xxx)", {
@@ -30,7 +30,7 @@ vows.describe("Eval errors tests").addBatch({
     "library test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/library-test.bin"
+                fileName: "test/dump/library-test.bin"
             });
 
             rio.evaluate("library(xxx)", {
@@ -46,7 +46,7 @@ vows.describe("Eval errors tests").addBatch({
     "unknown test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/unknown-test.bin"
+                fileName: "test/dump/unknown-test.bin"
             });
 
             rio.evaluate("x", {
@@ -62,7 +62,7 @@ vows.describe("Eval errors tests").addBatch({
     "syntax test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/syntax-test.bin"
+                fileName: "test/dump/syntax-test.bin"
             });
 
             rio.evaluate("1 // 3", {
