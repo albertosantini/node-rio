@@ -10,7 +10,7 @@ vows.describe("Basic tests").addBatch({
     "double number test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/double-test.bin"
+                fileName: "test/dump/double-test.bin"
             });
 
             rio.evaluate("pi / 2 * 2", {
@@ -28,7 +28,7 @@ vows.describe("Basic tests").addBatch({
     "double number array test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/double-array-test.bin"
+                fileName: "test/dump/double-array-test.bin"
             });
 
             rio.evaluate("c(1, 2)", {
@@ -46,7 +46,7 @@ vows.describe("Basic tests").addBatch({
     "string test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/string-test.bin"
+                fileName: "test/dump/string-test.bin"
             });
 
             rio.evaluate("as.character('Hello World')", {
@@ -64,7 +64,7 @@ vows.describe("Basic tests").addBatch({
     "string array test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/string-array-test.bin"
+                fileName: "test/dump/string-array-test.bin"
             });
 
             rio.evaluate("c('a', 'b')", {
@@ -82,7 +82,7 @@ vows.describe("Basic tests").addBatch({
     "boolean test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/boolean-test.bin"
+                fileName: "test/dump/boolean-test.bin"
             });
 
             rio.evaluate("TRUE", {
@@ -100,7 +100,7 @@ vows.describe("Basic tests").addBatch({
     "boolean array test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/boolean-array-test.bin"
+                fileName: "test/dump/boolean-array-test.bin"
             });
 
             rio.evaluate("c(TRUE, FALSE)", {
@@ -118,7 +118,7 @@ vows.describe("Basic tests").addBatch({
     "utf8 string test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/string-test.bin"
+                fileName: "test/dump/string-test.bin"
             });
 
             rio.evaluate("# แผ่นดินฮั่นเสื่อมโทรมแสน\n" +
