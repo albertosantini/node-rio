@@ -1,7 +1,7 @@
 {
     "name": "rio",
     "description": "Integration with Rserve, a TCP/IP server for R framework",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "main": "index",
     "repository": "http://github.com/albertosantini/node-rio",
     "keywords": [
@@ -22,7 +22,7 @@
     },
     "devDependencies": {
         "grunt": "~0.4.1",
-        "grunt-cli": "~0.1.10",
+        "grunt-cli": "~0.1.11",
         "grunt-contrib-jshint": "~0.7.1",
         "grunt-vows-runner": "~0.6.0",
         "vows": "~0.7.0"
