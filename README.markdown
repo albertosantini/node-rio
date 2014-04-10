@@ -144,13 +144,13 @@ Contributors
 
 ```
  project  : node-rio
- repo age : 2 years, 3 months
- active   : 49 days
- commits  : 118
- files    : 35
+ repo age : 2 years, 8 months
+ active   : 62 days
+ commits  : 138
+ files    : 38
  authors  :
-   113  icebox                  95.8%
-     2  Anand Patil             1.7%
-     2  albertosantini          1.7%
-     1  Farrin Reid             0.8%
+   130  icebox                  94.2%
+     5  albertosantini          3.6%
+     2  Anand Patil             1.4%
+     1  Farrin Reid             0.7%
 ```
