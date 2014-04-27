@@ -44,7 +44,14 @@ vows.describe("Login tests").addBatch({
             if (!err) {
                 assert(4, topic);
             } else {
-                assert.equal("Eval failed with error code 0", err);
+                if (err.code) {
+                    assert.equal("ECONNRESET", err.code);
+                } else {
+                    if ("Response with error code 65" !== err &&
+                        "Response with error code 0" !== err) {
+                        assert.ifError(err);
+                    }
+                }
             }
         }
     }
