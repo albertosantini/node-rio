@@ -79,7 +79,7 @@ The defaults for the options parameter:
             if (err) {
                 util.puts(res);
             } else {
-                util.puts("Rserve call failed");
+                util.puts("Rserve call failed. " + err);
             }
         },
         host = "127.0.0.1",
@@ -144,13 +144,14 @@ Contributors
 
 ```
  project  : node-rio
- repo age : 2 years, 8 months
- active   : 62 days
- commits  : 138
+ repo age : 2 years, 9 months
+ active   : 64 days
+ commits  : 148
  files    : 38
  authors  :
-   130  icebox                  94.2%
-     5  albertosantini          3.6%
+   135  icebox                  91.2%
+     6  albertosantini          4.1%
+     4  Manuel Santillan        2.7%
      2  Anand Patil             1.4%
      1  Farrin Reid             0.7%
 ```

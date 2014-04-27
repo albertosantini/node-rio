@@ -1,3 +1,8 @@
+1.3.0 / 2014-04-27
+==================
+
+* Fixed #13 - Error strings/network errors propagation.
+
 1.2.1 / 2014-04-10
 ==================
 
