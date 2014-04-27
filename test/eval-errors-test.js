@@ -23,6 +23,8 @@ vows.describe("Eval errors tests").addBatch({
         "missing package": function (err, topic) {
             // library fires a warning and returns false
             // if the package is missing
+            //assert.equal("Eval failed with error code 127", err);
+            assert.isNotNull(err);
             assert.equal(false, topic);
         }
     },
@@ -39,7 +41,8 @@ vows.describe("Eval errors tests").addBatch({
         },
 
         "missing package": function (err) {
-            assert.equal(true, err);
+
+            assert.equal("Eval failed with error code 127", err);
         }
     },
 
@@ -55,7 +58,7 @@ vows.describe("Eval errors tests").addBatch({
         },
 
         "getting unknown": function (err) {
-            assert.equal(true, err);
+            assert.equal("Eval failed with error code 127", err);
         }
     },
 
@@ -71,7 +74,7 @@ vows.describe("Eval errors tests").addBatch({
         },
 
         "getting syntax error": function (err) {
-            assert.equal(true, err);
+            assert.equal("Eval failed with error code 3", err);
         }
     }
 
