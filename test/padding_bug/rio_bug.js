@@ -17,8 +17,8 @@ options.host="127.0.0.1";
 options.port=6311
 
 options.callback=function(err, res){
-    console.log("err is", err)
-    console.log("Res ??", res)
+    if(!err && !res) console.log("ERROR: no response from server")
+    else console.log("RESULT OK")
 //    console.log("res is", res)
 };
 options.data={};
