@@ -49,7 +49,7 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install rio
 
-Tested with node 0.10.x and Rserve 1.7.3 (on Windows 7) with R 3.1.0.
+Tested with node 0.10.x and Rserve 1.7.3 (on Windows 7) with R 3.1.1.
 
 Don't forget to start [Rserve](http://cran.r-project.org/web/packages/Rserve/).
 For instance, from R console, after installing the package Rserve:
@@ -143,15 +143,16 @@ Contributors
 ============
 
 ```
- project  : node-rio
- repo age : 2 years, 9 months
- active   : 64 days
- commits  : 148
- files    : 38
- authors  :
-   135  icebox                  91.2%
-     6  albertosantini          4.1%
-     4  Manuel Santillan        2.7%
-     2  Anand Patil             1.4%
-     1  Farrin Reid             0.7%
+project  : node-rio
+repo age : 3 years, 1 month
+active   : 67 days
+commits  : 157
+files    : 39
+authors  :
+  140  icebox                  89.2%
+    7  Manuel Santillan        4.5%
+    6  albertosantini          3.8%
+    2  Anand Patil             1.3%
+    1  Alberto Santini         0.6%
+    1  Farrin Reid             0.6%
 ```

@@ -1,3 +1,8 @@
+1.3.1 / 2014-09-08
+==================
+
+* Fixed #16 - End-of-message padding seems wrong at least on Mac OS X.
+
 1.3.0 / 2014-04-27
 ==================
 
