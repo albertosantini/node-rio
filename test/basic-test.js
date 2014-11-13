@@ -18,7 +18,9 @@ vows.describe("Basic tests").addBatch({
             });
         },
         "get the integer": function (err, topic) {
+            if (!err) {
                 assert.equal(3, topic);
+	    }
         }
     },
 
@@ -33,7 +35,9 @@ vows.describe("Basic tests").addBatch({
             });
         },
         "get the integer array": function (err, topic) {
+            if (!err) {
                 assert.deepEqual([1, 2], topic);
+	    }
         }
     },
     "double number test": {
