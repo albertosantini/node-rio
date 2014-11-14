@@ -1,3 +1,10 @@
+1.3.2 / 2014-11-14
+==================
+
+* Added support for integer and integer array.
+* Added info to record a Rserve session for the tests.
+* Updated hexy 0.2.7, vows 0.8.0.
+
 1.3.1 / 2014-09-08
 ==================
 
