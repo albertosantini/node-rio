@@ -7,6 +7,39 @@ var rio = require("../lib/rio"),
 var isEnablePlaybackMode = process.env.CI === "true";
 
 vows.describe("Basic tests").addBatch({
+    "integer test": {
+        topic: function () {
+            rio.enablePlaybackMode(isEnablePlaybackMode, {
+                fileName: "test/dump/integer-test.bin"
+            });
+
+            rio.evaluate("as.integer(3)", {
+                callback: this.callback
+            });
+        },
+        "get the integer": function (err, topic) {
+            if (!err) {
+                assert.equal(3, topic);
+	    }
+        }
+    },
+
+    "integer array test": {
+        topic: function () {
+            rio.enablePlaybackMode(isEnablePlaybackMode, {
+                fileName: "test/dump/integer-array-test.bin"
+            });
+
+            rio.evaluate("c(as.integer(1), as.integer(2))", {
+                callback: this.callback
+            });
+        },
+        "get the integer array": function (err, topic) {
+            if (!err) {
+                assert.deepEqual([1, 2], topic);
+	    }
+        }
+    },
     "double number test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
