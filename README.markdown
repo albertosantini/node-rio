@@ -130,6 +130,20 @@ options.
         fileName: "node-rio-dump.bin"
     }
 
+It is useful to record a Rserve session to replay it in an environment whitout
+Rserve. For instance,
+
+```
+> var rio=require("./index.js")
+undefined
+> rio.enableRecordMode(true, {fileName: "test/dump/integer-test.bin"});
+undefined
+> rio.evaluate("as.integer(3)")
+undefined
+> 3
+(^C again to quit)
+```
+
 enablePlaybackMode(isPlaybackMode, options)
 ------------------
 
