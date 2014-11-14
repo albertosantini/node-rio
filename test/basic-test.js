@@ -18,9 +18,10 @@ vows.describe("Basic tests").addBatch({
             });
         },
         "get the integer": function (err, topic) {
-            if (!err) {
-                assert.equal(3, topic);
-	    }
+            if (err) {
+                throw err;
+            }
+            assert.equal(3, topic);
         }
     },
 
@@ -35,9 +36,10 @@ vows.describe("Basic tests").addBatch({
             });
         },
         "get the integer array": function (err, topic) {
-            if (!err) {
-                assert.deepEqual([1, 2], topic);
-	    }
+            if (err) {
+                throw err;
+            }
+            assert.deepEqual([1, 2], topic);
         }
     },
     "double number test": {
@@ -52,9 +54,10 @@ vows.describe("Basic tests").addBatch({
         },
 
         "get the double number": function (err, topic) {
-            if (!err) {
-                assert.equal(3.141592653589793, topic);
+            if (err) {
+                throw err;
             }
+            assert.equal(3.141592653589793, topic);
         }
     },
 
@@ -70,9 +73,10 @@ vows.describe("Basic tests").addBatch({
         },
 
         "get the double number array": function (err, topic) {
-            if (!err) {
-                assert.deepEqual([1, 2], topic);
+            if (err) {
+                throw err;
             }
+            assert.deepEqual([1, 2], topic);
         }
     },
 
@@ -88,9 +92,10 @@ vows.describe("Basic tests").addBatch({
         },
 
         "get the string": function (err, topic) {
-            if (!err) {
-                assert.equal("Hello World", topic);
+            if (err) {
+                throw err;
             }
+            assert.equal("Hello World", topic);
         }
     },
 
@@ -106,9 +111,10 @@ vows.describe("Basic tests").addBatch({
         },
 
         "get the string array": function (err, topic) {
-            if (!err) {
-                assert.deepEqual(["a", "b"], topic);
+            if (err) {
+                throw err;
             }
+            assert.deepEqual(["a", "b"], topic);
         }
     },
 
@@ -124,9 +130,10 @@ vows.describe("Basic tests").addBatch({
         },
 
         "get the boolean value": function (err, topic) {
-            if (!err) {
-                assert.equal(true, topic);
+            if (err) {
+                throw err;
             }
+            assert.equal(true, topic);
         }
     },
 
@@ -142,9 +149,10 @@ vows.describe("Basic tests").addBatch({
         },
 
         "get the boolean array": function (err, topic) {
-            if (!err) {
-                assert.deepEqual([true, false], topic);
+            if (err) {
+                throw err;
             }
+            assert.deepEqual([true, false], topic);
         }
     },
 
@@ -161,9 +169,10 @@ vows.describe("Basic tests").addBatch({
         },
 
         "get the utf8 string": function (err, topic) {
-            if (!err) {
-                assert.equal("Hello World", topic);
+            if (err) {
+                throw err;
             }
+            assert.equal("Hello World", topic);
         }
     }
 
