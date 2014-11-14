@@ -130,7 +130,7 @@ options.
         fileName: "node-rio-dump.bin"
     }
 
-It is useful to record a Rserve session to replay it in an environment whitout
+It is useful to record a Rserve session to replay it in an environment without
 Rserve. For instance,
 
 ```
