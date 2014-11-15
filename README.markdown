@@ -131,7 +131,8 @@ options.
     }
 
 It is useful to record a Rserve session to replay it in an environment without
-Rserve. For instance,
+[Rserve](http://cran.r-project.org/web/packages/Rserve/) (for example
+[Travis CI](https://travis-ci.org/)). For instance,
 
 ```
 > var rio=require("./index.js")
@@ -143,6 +144,11 @@ undefined
 > 3
 (^C again to quit)
 ```
+
+Then, you need to export the variable `CI` to emulate CI environment:
+`export CI=true`
+
+Eventually `npm test`.
 
 enablePlaybackMode(isPlaybackMode, options)
 ------------------
