@@ -118,7 +118,19 @@ for `evaluate`.
 enableDebug(isDebug)
 -----------
 
-It enables debugging mode, printing the packet and logging messages.
+It enables debugging mode, printing the packet and logging messages on client
+side.
+
+You may start also a Rserve instance in debugging mode with following commands:
+
+```
+export R_PATH=/c/My/Programs/R
+export PATH=$PATH:$R_PATH/bin/x64
+
+$R_PATH/library/Rserve/libs/x64/Rserve_d.exe --
+```
+
+Set your paths accordingly.
 
 enableRecordMode(isRecordMode, options)
 ----------------
