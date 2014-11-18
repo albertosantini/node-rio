@@ -70,13 +70,13 @@ evaluate(command, options)
 --------------------------
 
 Evaluate a command, connecting to Rserve, executing the command and then
-disconnecting.
+disconnecting. The result is passed to the callback.
 
 The defaults for the options parameter:
 
     options = {
         callback: function (err, res) {
-            if (err) {
+            if (!err) {
                 util.puts(res);
             } else {
                 util.puts("Rserve call failed. " + err);
@@ -90,7 +90,6 @@ The defaults for the options parameter:
     }
 
 Either define `path`, the path of a Unix socket, or `host`/`port`.
-
 
 sourceAndEval(filename, options)
 -------------
