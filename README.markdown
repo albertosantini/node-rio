@@ -7,8 +7,8 @@ RIO
 RIO, R Input Output, connects an app to [Rserve](http://www.rforge.net/Rserve/),
 a TCP/IP server which allows other programs to use facilities of [R](http://www.r-project.org).
 
-It supports double, double array, string, string array boolean, boolean array
-objects and raw vector (images or files).
+It supports double, double array, integer, integer array, string, string array, 
+boolean, boolean array objects and raw vector (images or files).
 
 It supports also the plain text authentication, if Rserve is configured for that
 capability.
