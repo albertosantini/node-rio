@@ -106,7 +106,8 @@ bufferAndEval(buffer, options)
 -------------
 
 It is an helper method to call `evaluate`, adding to the buffer string, the call
-of the entry point. Options are the same as for `evaluate`.
+of the entry point. Options are the same as for `evaluate`. If buffer is `null`,
+it is called only the entry point.
 
 shutdown(options)
 -----------------
