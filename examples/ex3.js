@@ -1,7 +1,8 @@
-/*jslint node:true, sloppy:true nomen:true */
+"use strict";
 
-var rio = require("../lib/rio"),
-    assert = require("assert");
+var path = require("path"),
+    assert = require("assert"),
+    rio = require("../lib/rio");
 
 var args = {};
 
@@ -37,7 +38,7 @@ function getOptimalPortfolio(params, callback, config) {
         callback(ans);
     };
 
-    rio.sourceAndEval(__dirname + "/ex3.R", cfg);
+    rio.sourceAndEval(path.join(__dirname, "ex3.R"), cfg);
 }
 
 getOptimalPortfolio(args, function (res) {
@@ -61,5 +62,3 @@ getOptimalPortfolio(args, function (res) {
 }, {
     host: "127.0.0.1"
 });
-
-

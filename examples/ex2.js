@@ -1,6 +1,7 @@
 "use strict";
 
 var util = require("util"),
+    path = require("path"),
     rio = require("../lib/rio");
 
 var args = {
@@ -22,9 +23,8 @@ function displayResponse(err, res) {
     }
 }
 
-rio.sourceAndEval(__dirname + "/ex2.R", {
+rio.sourceAndEval(path.join(__dirname, "ex2.R"), {
     entryPoint: "getOptimalPortfolio",
     data: args,
     callback: displayResponse
 });
-

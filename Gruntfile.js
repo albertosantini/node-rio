@@ -2,13 +2,16 @@ module.exports = function (grunt) {
     "use strict";
 
     grunt.initConfig({
-        jshint: {
+        eslint: {
             options: {
-                jshintrc: ".jshintrc"
+                config: ".eslintrc"
             },
             src: [
+                "Gruntfile.js",
+                "index.js",
                 "lib/**/*.js",
-                "test/**/*.js"
+                "test/**/*-test.js",
+                "examples/**/*.js"
             ]
         },
 
@@ -23,11 +26,11 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.loadNpmTasks("grunt-eslint");
     grunt.loadNpmTasks("grunt-vows-runner");
 
     grunt.registerTask("default", [
-        "jshint",
+        "eslint",
         "vows"
     ]);
 };
