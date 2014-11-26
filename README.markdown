@@ -7,7 +7,7 @@ RIO
 RIO, R Input Output, connects an app to [Rserve](http://www.rforge.net/Rserve/),
 a TCP/IP server which allows other programs to use facilities of [R](http://www.r-project.org).
 
-It supports double, double array, integer, integer array, string, string array, 
+It supports double, double array, integer, integer array, string, string array,
 boolean, boolean array objects and raw vector (images or files).
 
 It supports also the plain text authentication, if Rserve is configured for that
@@ -175,16 +175,17 @@ Contributors
 
 ```
  project  : node-rio
- repo age : 3 years, 3 months
- active   : 69 days
- commits  : 166
- files    : 41
+ repo age : 3 years, 4 months
+ active   : 74 days
+ commits  : 177
+ files    : 43
  authors  :
-   145  icebox                  87.3%
-     7  Manuel Santillan        4.2%
-     6  albertosantini          3.6%
-     3  Karthik Madathil        1.8%
-     2  Alberto Santini         1.2%
-     2  Anand Patil             1.2%
+   152  icebox                  85.9%
+     7  Manuel Santillan        4.0%
+     6  albertosantini          3.4%
+     5  Alberto Santini         2.8%
+     3  Karthik Madathil        1.7%
+     2  Anand Patil             1.1%
+     1  Alex Proca              0.6%
      1  Farrin Reid             0.6%
 ```
