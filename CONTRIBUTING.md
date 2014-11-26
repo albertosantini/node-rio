@@ -18,7 +18,7 @@ at `.jshintrc`.
 - Make the test pass with and without `CI` variable exported
 (see enableRecordeMode).
 
-- Push to your fork and submit a pull request.
+- Push to your fork and submit a pull request (squashing the commits into one).
 
 
 At this point you are waiting on us. We like to at least comment on, if not
