@@ -38,6 +38,7 @@ See `examples` directory.
 details.
 - `ex4`: An example with utf-8 chars.
 - `ex5`: How to retrieve a plot.
+- `ex6`: How to call functions already loaded in R session.
 
 Installation
 ============
