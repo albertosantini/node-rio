@@ -15,7 +15,8 @@ vows.describe("Eval errors tests").addBatch({
                 fileName: "test/dump/require-test.bin"
             });
 
-            rio.evaluate("require(xxx)", {
+            rio.e({
+                command: "require(xxx)",
                 callback: this.callback
             });
         },
@@ -35,7 +36,8 @@ vows.describe("Eval errors tests").addBatch({
                 fileName: "test/dump/library-test.bin"
             });
 
-            rio.evaluate("library(xxx)", {
+            rio.e({
+                command: "library(xxx)",
                 callback: this.callback
             });
         },
@@ -52,7 +54,8 @@ vows.describe("Eval errors tests").addBatch({
                 fileName: "test/dump/unknown-test.bin"
             });
 
-            rio.evaluate("x", {
+            rio.e({
+                command: "x",
                 callback: this.callback
             });
         },
@@ -68,7 +71,8 @@ vows.describe("Eval errors tests").addBatch({
                 fileName: "test/dump/syntax-test.bin"
             });
 
-            rio.evaluate("1 // 3", {
+            rio.e({
+                command: "1 // 3",
                 callback: this.callback
             });
         },

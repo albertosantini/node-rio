@@ -15,13 +15,14 @@ vows.describe("Image tests").addBatch({
                 fileName: "test/dump/image-test.bin"
             });
 
-            rio.evaluate("filename <- tempfile('plot', fileext = '.png')\n" +
-                "png(filename)\n" +
-                "plot(1:10)\n" +
-                "dev.off()\n" +
-                "image <- readBin(filename, 'raw', 29999)\n" +
-                "unlink(filename)\n" +
-                "image\n", {
+            rio.e({
+                command: "filename <- tempfile('plot', fileext = '.png')\n" +
+                    "png(filename)\n" +
+                    "plot(1:10)\n" +
+                    "dev.off()\n" +
+                    "image <- readBin(filename, 'raw', 29999)\n" +
+                    "unlink(filename)\n" +
+                    "image\n",
                 callback: this.callback
             });
         },

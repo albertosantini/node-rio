@@ -14,7 +14,8 @@ args.highs = [1, 1, 1];
 
 function getOptimalPortfolio(params, callback, config) {
     var cfg = {
-        entryPoint: "getOptimalPortfolio",
+        filename: path.join(__dirname, "ex3.R"),
+        entrypoint: "getOptimalPortfolio",
         data: params
     };
 
@@ -38,7 +39,7 @@ function getOptimalPortfolio(params, callback, config) {
         callback(ans);
     };
 
-    rio.sourceAndEval(path.join(__dirname, "ex3.R"), cfg);
+    rio.e(cfg);
 }
 
 getOptimalPortfolio(args, function (res) {

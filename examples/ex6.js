@@ -13,8 +13,8 @@ function printEcho(err, res) {
     }
 }
 
-rio.bufferAndEval(null, {
-    entryPoint: "echo",
+rio.e({
+    entrypoint: "echo",
     data: ["test", "data"],
     callback: printEcho
 });

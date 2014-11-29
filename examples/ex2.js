@@ -23,8 +23,9 @@ function displayResponse(err, res) {
     }
 }
 
-rio.sourceAndEval(path.join(__dirname, "ex2.R"), {
-    entryPoint: "getOptimalPortfolio",
+rio.e({
+    filename: path.join(__dirname, "ex2.R"),
+    entrypoint: "getOptimalPortfolio",
     data: args,
     callback: displayResponse
 });

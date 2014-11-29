@@ -13,7 +13,8 @@ vows.describe("Basic tests").addBatch({
                 fileName: "test/dump/integer-test.bin"
             });
 
-            rio.evaluate("as.integer(3)", {
+            rio.e({
+                command: "as.integer(3)",
                 callback: this.callback
             });
         },
@@ -31,7 +32,8 @@ vows.describe("Basic tests").addBatch({
                 fileName: "test/dump/integer-array-test.bin"
             });
 
-            rio.evaluate("c(as.integer(1), as.integer(2))", {
+            rio.e({
+                command: "c(as.integer(1), as.integer(2))",
                 callback: this.callback
             });
         },
@@ -48,7 +50,8 @@ vows.describe("Basic tests").addBatch({
                 fileName: "test/dump/double-test.bin"
             });
 
-            rio.evaluate("pi / 2 * 2", {
+            rio.e({
+                command: "pi / 2 * 2",
                 callback: this.callback
             });
         },
@@ -67,7 +70,8 @@ vows.describe("Basic tests").addBatch({
                 fileName: "test/dump/double-array-test.bin"
             });
 
-            rio.evaluate("c(1, 2)", {
+            rio.e({
+                command: "c(1, 2)",
                 callback: this.callback
             });
         },
@@ -86,7 +90,8 @@ vows.describe("Basic tests").addBatch({
                 fileName: "test/dump/string-test.bin"
             });
 
-            rio.evaluate("as.character('Hello World')", {
+            rio.e({
+                command: "as.character('Hello World')",
                 callback: this.callback
             });
         },
@@ -105,7 +110,8 @@ vows.describe("Basic tests").addBatch({
                 fileName: "test/dump/string-array-test.bin"
             });
 
-            rio.evaluate("c('a', 'b')", {
+            rio.e({
+                command: "c('a', 'b')",
                 callback: this.callback
             });
         },
@@ -124,7 +130,8 @@ vows.describe("Basic tests").addBatch({
                 fileName: "test/dump/boolean-test.bin"
             });
 
-            rio.evaluate("TRUE", {
+            rio.e({
+                command: "TRUE",
                 callback: this.callback
             });
         },
@@ -143,7 +150,8 @@ vows.describe("Basic tests").addBatch({
                 fileName: "test/dump/boolean-array-test.bin"
             });
 
-            rio.evaluate("c(TRUE, FALSE)", {
+            rio.e({
+                command: "c(TRUE, FALSE)",
                 callback: this.callback
             });
         },
@@ -162,8 +170,9 @@ vows.describe("Basic tests").addBatch({
                 fileName: "test/dump/string-test.bin"
             });
 
-            rio.evaluate("# แผ่นดินฮั่นเสื่อมโทรมแสน\n" +
-                "as.character('Hello World')", {
+            rio.e({
+                command: "# แผ่นดินฮั่นเสื่อมโทรมแสน\n" +
+                    "as.character('Hello World')",
                 callback: this.callback
             });
         },

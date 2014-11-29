@@ -15,7 +15,8 @@ vows.describe("Login tests").addBatch({
                 fileName: "test/dump/login-ok-test.bin"
             });
 
-            rio.evaluate("2+2", {
+            rio.e({
+                command: "2+2",
                 callback: this.callback
             });
         },
@@ -33,7 +34,8 @@ vows.describe("Login tests").addBatch({
                 fileName: "test/dump/login-ko-test.bin"
             });
 
-            rio.evaluate("2+2", {
+            rio.e({
+                command: "2+2",
                 user: "wrong user",
                 password: "wrong password",
                 callback: this.callback

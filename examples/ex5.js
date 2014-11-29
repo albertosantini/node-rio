@@ -16,7 +16,8 @@ function getPlot(err, res) {
     }
 }
 
-rio.sourceAndEval(path.join(__dirname, "ex5.R"), {
-    entryPoint: "createDummyPlot",
+rio.e({
+    filename: path.join(__dirname, "ex5.R"),
+    entrypoint: "createDummyPlot",
     callback: getPlot
 });
