@@ -50,7 +50,7 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install rio
 
-Tested with node 0.10.x and Rserve 1.7.3 (on Windows 7) with R 3.1.1.
+Tested with node 0.10.x and Rserve 1.7.3 (on Windows 7) with R 3.1.2.
 
 Don't forget to start [Rserve](http://cran.r-project.org/web/packages/Rserve/).
 For instance, from R console, after installing the package Rserve:
@@ -75,7 +75,13 @@ disconnecting. The result is passed to the callback.
 
 The defaults for the options parameter:
 
-    options = {
+    params = {
+        command: "",
+        filename: "",
+
+        entrypoint: "",
+        data: {},
+
         callback: function (err, res) {
             if (!err) {
                 util.puts(res);
@@ -83,14 +89,29 @@ The defaults for the options parameter:
                 util.puts("Rserve call failed. " + err);
             }
         },
+
         host = "127.0.0.1",
         port = 6311,
         path = undefined,
+
         user = "anon",
         password = "anon"
     }
 
-Either define `path`, the path of a Unix socket, or `host`/`port`.
+- `command` OR `filename` OR `entrypoint` need to be filled.
+Otherwise it is missing the evaluation object.
+
+- if `command` AND  `filename` AND `entrypoint` are empty then error.
+As above, said in different way.
+
+- `command` AND `filename` are exclusive: if both are not empty then error.
+Otherwise what does rio evaluate, command or filename?
+
+- if `command` AND  `filename` are empty then `entrypoint` is mandatory.
+This is the case when rio evaluates a function defined on R side.
+
+- `host` AND `path` are exclusive.
+rio needs to choose beetween net socket or unix socket transport.
 
 sourceAndEval(filename, options)
 -------------
