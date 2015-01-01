@@ -4,8 +4,8 @@ var fs = require("fs"),
     path = require("path"),
     rio = require("../lib/rio");
 
-function getPlot(err, res) {
-    if (!err) {
+function getPlot(error, res) {
+    if (!error) {
         fs.writeFile("myPlot.png", res, {encoding: "binary"}, function (err) {
             if (!err) {
                 console.log("myPlot.png saved in ", __dirname);
