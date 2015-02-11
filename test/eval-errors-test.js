@@ -24,7 +24,7 @@ vows.describe("Eval errors tests").addBatch({
         "missing package": function (err, topic) {
             // library fires a warning and returns false
             // if the package is missing
-            //assert.equal("Eval failed with error code 127", err);
+            // assert.equal("Eval failed with error code 127", err);
             assert.isNotNull(err);
             assert.equal(false, topic);
         }

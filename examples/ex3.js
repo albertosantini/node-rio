@@ -8,7 +8,7 @@ var args = {};
 
 args.prods = ["IBM", "YHOO", "MSFT"];
 args.referenceDate = "Sat, 06 Aug 2011 12:00:00 GMT";
-args.targetReturn = undefined;
+// args.targetReturn = undefined;
 args.lows = [0, 0, 0];
 args.highs = [1, 1, 1];
 
