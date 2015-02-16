@@ -193,6 +193,43 @@ It enables playback mode, reading a dump file instead connecting to the server.
         fileName: "node-rio-dump.bin"
     }
 
+Promisifying
+============
+
+You can manually promisifying rio.evaluate with your preferred promise library:
+
+```
+var rio = require("rio");
+rio.evaluateAsync = function(command, options) {
+    return new Promise(function (resolve, reject) {
+        var opts = options || {};
+
+        opts.callback = function(err, result) {
+            if (err) {
+                return reject(err);
+            }
+
+            return resolve(result);
+        };
+
+        return rio.evaluate(command,options);
+    });
+};
+```
+Then, for instance, in express, you can use it in a route:
+
+```
+...
+return rio.evaluateAsync(req.params.rio)
+    .then(function (data) {
+        return res.send(data.toString()); // or whatever
+    }, function (e) {
+        return res.sendStatus(500);
+    });
+```
+Thanks to @tamaracha to provide the snippet.
+
+
 Contributors
 ============
 
