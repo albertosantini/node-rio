@@ -174,6 +174,26 @@ vows.describe("Basic tests").addBatch({
             }
             assert.equal("Hello World", topic);
         }
+    },
+    "json test": {
+        topic: function () {
+            rio.enablePlaybackMode(isEnablePlaybackMode, {
+                fileName: "test/dump/json-test.bin"
+            });
+            var jsonstr = "{\"result\":{\"key1\":[1],\"key2\":[true]}}";
+            var cmd = "library(jsonlite); toJSON(fromJSON('" + jsonstr + "'));";
+            rio.evaluate(cmd, {
+                callback: this.callback
+            });
+        },
+
+        "get the json": function (err, json) {
+            if (err) {
+                throw err;
+            }
+            var jsonstr = "{\"result\":{\"key1\":[1],\"key2\":[true]}}";
+            assert.deepEqual( json,JSON.parse(jsonstr));
+        }
     }
 
 }).export(module);
