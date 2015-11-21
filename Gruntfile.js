@@ -4,9 +4,6 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         eslint: {
-            options: {
-                config: ".eslintrc"
-            },
             src: [
                 "Gruntfile.js",
                 "index.js",
