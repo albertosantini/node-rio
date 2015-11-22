@@ -4,8 +4,6 @@ RIO
 [![NPM version](https://badge.fury.io/js/rio.png)](http://badge.fury.io/js/rio)
 [![NGN Dependencies](https://david-dm.org/albertosantini/node-rio.png)](https://david-dm.org/albertosantini/node-rio)
 
-## Working In Progress README due to 2.x release
-
 RIO, R Input Output, connects an app to [Rserve](http://www.rforge.net/Rserve/),
 a TCP/IP server which allows other programs to use facilities of [R](http://www.r-project.org).
 
@@ -16,28 +14,26 @@ It supports also the plain text authentication, if Rserve is configured for that
 capability.
 
 The main goal is to pass a string containing a script call using a JSON object
-as parameter. Then, inside the script, using RJSONIO package, deserializing
-the JSON object, calling a method, serializing the response and returning to
-NodeJS.
+as parameter. Then, inside the script, using `RJSONIO` or `jsonlite` package,
+deserializing the JSON object, calling a method, serializing the response and
+returning to Node.js.
 
 Example
 ========
 
-    var rio = require('rio');
+    var rio = require("rio");
 
     rio.evaluate("pi / 2 * 2");
-    rio.evaluate('c(1, 2)');
+    rio.evaluate("c(1, 2)");
     rio.evaluate("as.character('Hello World')");
-    rio.evaluate('c("a", "b")');
-    rio.evaluate('Sys.sleep(5); 11')
+    rio.evaluate("c('a', 'b')");
+    rio.evaluate("Sys.sleep(5); 11")
 
 See `examples` directory.
 
 - `ex1`: Getting started with `evaluate` api.
-- `ex2`: How to evaluate a script, to call a function passing params with
-`sourceAndEval`.
-- `ex3`: How to call `sourceAndEval` with a config object including connection
-details.
+- `ex2`: How to evaluate a `filename` and `entrypoint`.
+- `ex3`: How to evaluate a `filename` and `host`.
 - `ex4`: An example with utf-8 chars.
 - `ex5`: How to retrieve a plot.
 - `ex6`: How to call functions already loaded in R session.
@@ -57,27 +53,27 @@ Tested with Node.js 5.x and Rserve 1.7.3 (on Windows 10 64) with R 3.2.2.
 Don't forget to start [Rserve](http://cran.r-project.org/web/packages/Rserve/).
 For instance, from R console, after installing the package Rserve:
 
-    require('Rserve')
+    require("Rserve")
     Rserve()
 
 To shutdown the server from R console:
 
-    require('RSclient')
+    require("RSclient")
     c <- RSconnect()
     RSshutdown(c)
 
 Methods
 =======
 
-evaluate(command, options)
---------------------------
+evaluate(config) - e(config)
+----------------------------
 
 Evaluate a command, connecting to Rserve, executing the command and then
 disconnecting. The result is passed to the callback.
 
 The defaults for the options parameter:
 
-    params = {
+    config = {
         command: "",
         filename: "",
 
@@ -86,14 +82,14 @@ The defaults for the options parameter:
 
         callback: function (err, res) {
             if (!err) {
-                util.puts(res);
+                console.log(res);
             } else {
-                util.puts("Rserve call failed. " + err);
+                console.log("Rserve call failed. " + err);
             }
         },
 
         host = "127.0.0.1",
-        port = 6311,
+        port = "6311",
         path = undefined,
 
         user = "anon",
@@ -115,23 +111,23 @@ This is the case when rio evaluates a function defined on R side.
 - `host` AND `path` are exclusive.
 rio needs to choose beetween net socket or unix socket transport.
 
-sourceAndEval(filename, options)
--------------
+When `filename` is filled, rio loads the content of a R file, calling
+finally an `entrypoint`, passing `data`.
 
-It loads the content of a R file and calls the `evaluate` method, merging,
-finally, the options parameter:
-
-    options = {
-        entryPoint: "main", // entryPoint is called
-        data: { foo: "bar" } // data is stringified and passed to entryPoint
+    config = {
+        filename: "foo.R",
+        entrypoint: "main", // entrypoint is called
+        data: { foo: "bar" } // data is stringified and passed to entrypoint
     }
 
-bufferAndEval(buffer, options)
--------------
+When `entrypoint` is filled, finally passing `data`, it is used when we
+need to call a function defined in Rserve instance.
 
-It is an helper method to call `evaluate`, adding to the buffer string, the call
-of the entry point. Options are the same as for `evaluate`. If buffer is `null`,
-it is called only the entry point.
+    config = {
+        entrypoint: "echo",
+        data: ["test", "data"],
+        callback: printEcho
+    }
 
 shutdown(options)
 -----------------
@@ -145,7 +141,8 @@ enableDebug(isDebug)
 It enables debugging mode, printing the packet and logging messages on client
 side.
 
-You may start also a Rserve instance in debugging mode with following commands:
+You may start also a Rserve instance in debugging mode with following commands
+(on Windows box with Git Bash Shell):
 
 ```
 export R_PATH=/c/My/Programs/R
@@ -175,7 +172,7 @@ It is useful to record a Rserve session to replay it in an environment without
 undefined
 > rio.enableRecordMode(true, {fileName: "test/dump/integer-test.bin"});
 undefined
-> rio.evaluate("as.integer(3)")
+> rio.evaluate({command: "as.integer(3)"})
 undefined
 > 3
 (^C again to quit)
@@ -202,9 +199,9 @@ You can manually promisifying rio.evaluate with your preferred promise library:
 
 ```
 var rio = require("rio");
-rio.evaluateAsync = function(command, options) {
+rio.evaluateAsync = function(params) {
     return new Promise(function (resolve, reject) {
-        var opts = options || {};
+        var opts = params || {};
 
         opts.callback = function(err, result) {
             if (err) {
@@ -214,7 +211,7 @@ rio.evaluateAsync = function(command, options) {
             return resolve(result);
         };
 
-        return rio.evaluate(command,options);
+        return rio.evaluate(params);
     });
 };
 ```
