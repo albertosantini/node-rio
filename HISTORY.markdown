@@ -1,3 +1,8 @@
+2.0.0 / 2015-11-22
+==================
+
+* Interface changes and implementation refactoring, no new features.
+
 1.4.0 / 2014-11-26
 ==================
 
