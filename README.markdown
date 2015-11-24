@@ -37,6 +37,7 @@ See `examples` directory.
 - `ex4`: An example with utf-8 chars.
 - `ex5`: How to retrieve a plot.
 - `ex6`: How to call functions already loaded in R session.
+- `ex7`: An example with large data packet.
 
 Installation
 ============
