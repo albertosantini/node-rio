@@ -1,7 +1,7 @@
 2.0.1 / 2015-11-22
 ==================
 
-*  Fix getting started examples in README.
+*  Fixed getting started examples in README.
 
 2.0.0 / 2015-11-22
 ==================
@@ -11,8 +11,8 @@
 1.4.0 / 2014-11-26
 ==================
 
-* Add option to call functions already loaded in R session.
-* Use eslint (vs. jshint).
+* Added option to call functions already loaded in R session.
+* Used eslint (vs. jshint).
 
 1.3.2 / 2014-11-14
 ==================
