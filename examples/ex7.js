@@ -11,82 +11,21 @@ rio.e({
         if (err) {
             console.log("Large packet failed");
         } else {
+            // JSON.parse fails due to 4.e6 number, no legit in JSON
+            // for instance, JSON.parse("[4.e6]"); // Syntax error
+            // see issue #31
+            // data = JSON.parse(res);
+
             /*eslint-disable */
-            // data = JSON.parse(res); // parse fails
             data = json_parse(res);
+            /*eslint-enable */
             assert(data.length === 5000001);
             console.log("Large packet ok");
         }
     }
 });
 
-
-
-// rio info with debug enabled
-//
-// Connected to Rserve
-// Supported capabilities --------------
-//
-// Sending command to Rserve
-// 00000000: 0300 0000 3400 0000 0000 0000 0000 0000  ....4...........
-// 00000010: 0430 0000 6c69 6272 6172 7928 2752 4a53  .0..library('RJS
-// 00000020: 4f4e 494f 2729 3b20 746f 4a53 4f4e 2873  ONIO');.toJSON(s
-// 00000030: 6571 2830 2c20 3530 3030 3030 302c 2031  eq(0,.5000000,.1
-// 00000040: 2929 0001                                ))..
-//
-// Data Header
-// 00000000: 0100 0100 d0fc 8403 0000 0000 0000 0000  ....P|..........
-//
-// Data packet
-// 00000000: 0300 0000 62c0 fc84 0300 0000 5b20 2020  ....b@|.....[...
-// 00000010: 2020 2030 2c20 2020 2020 2031 2c20 2020  ...0,......1,...
-// ...
-// 0084fcb0: 3630 3665 2b30 352c 2037 2e36 3630 3665  606e+05,.7.6606e
-// 0084fcc0: 2b30 352c 2037 2e36                      +05,.7.6
-//
-// Type SEXP 3
-// Type 3 is currently not implemented
-// Rserve call failed. true
-// Disconnected from Rserve
-// Closed from Rserve
-
-// Rserve info with debug instance
-//
-// header read result: 16
-// DUMP [16]: 03 00 00 00 34 00 00 00 00 00 00 00 00 00 00 00  |....4...........
-// loading buffer (awaiting 52 bytes)
-// parsing parameters (buf=0000000002656160, len=52)
-// DUMP [52]: 04 30 00 00 6c 69 62 72 61 72 79 28 27 52 4a 53 4f 4e 49 4f 27 29 3b 20 74 6f 4a 53 4f 4e 28 73 65 71 28 30 2c 20 35 30 30 30 30 30 30 2c 20 31 29 29 00 01  |.0..library('RJSONIO'); toJSON(seq(0, 5000000, 1))..
-// PAR[0]: 00000034 (PAR_LEN=48, PAR_TYPE=4, large=no, c=0000000002656160, ptr=0000000002656164)
-// CMD=00000003, pars=1
-// parseString("library('RJSONIO'); toJSON(seq(0, 5000000, 1))")
-// buffer parsed, stat=1, parts=2
-// result type: 20, length: 2
-// R_tryEval(xp,R_GlobalEnv,&Rerror);
-// Calling R_tryEval for expression 1 [type=6] ...
-// Expression 1, error code: 0
-// Calling R_tryEval for expression 2 [type=6] ...
-// Expression 2, error code: 0
-// expression(s) evaluated (Rerror=0).
-// String vector of length 1:
-// scalar string: "[      0,      1,      2,      3,      4,      5,      6,      7,      8,      9,     10,     11,     12,
-// ...
-// +06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06,  5e+06 ]"
-// getStorageSize(000000000515A380,type=16,len=1) getStorageSize(0000000005169D50,type=9,len=59047101) = 59047112
-// = 59047120
-// result storage size = 73808900 bytes
-// Trying to allocate temporary send buffer of 73809920 bytes.
-// stored 000000000515A380 at 000000001B78C048, 59047108 bytes
-// stored SEXP; length=59047120 (incl. DT_SEXP header)
-// OUT.sendRespData
-// HEAD DUMP [16]: 01 00 01 00 d0 fc 84 03 00 00 00 00 00 00 00 00  |................
-// BODY DUMP [59047120]: 4a c8 fc 84 03 00 00 00 62 c0 fc 84 03 00 00 00 5b 20 20 20 20 20 20 30 2c 20 20 20 20 20 20 31 2c 20 20 20 20 20 20 32 2c 20 20 20 20 20 20 33 2c 20 20 20 20 20 20 34 2c 20 20 20 20 20 20 35 2c 20 20 20 20 20 20 36 2c 20 20 20 20 20 20 37 2c 20 20 20 20 20 20 38 2c 20 20 20 20 20 20 39 2c 20 20 20 20 20 31 30 2c 20 20 20 20 20 31 31 2c 20 20 20 20 20 31 32 2c 20 20 20 20 20 31 33 2c ...  |J.......b.......[      0,      1,      2,      3,      4,      5,      6,      7,      8,      9,     10,     11,     12,     13,
-// Releasing temporary sendbuf and restoring old size of 2097152 bytes.
-// reply sent.
-// Connection closed by peer.
-// done.
-//
-
+/*eslint-disable */
 /*
     json_parse.js
     2015-05-02
