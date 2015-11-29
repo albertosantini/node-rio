@@ -13,7 +13,7 @@ a test!
 whatever is affected by your contribution.
 
 - Follow the conventions you see used in the source already. You may give a look
-at `.jshintrc`.
+at `.eslintrc.yml`.
 
 - Make the test pass with and without `CI` variable exported
 (see enableRecordeMode).
