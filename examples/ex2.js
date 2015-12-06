@@ -1,7 +1,6 @@
 "use strict";
 
-var util = require("util"),
-    path = require("path"),
+var path = require("path"),
     rio = require("../lib/rio");
 
 var args = {
@@ -14,12 +13,12 @@ function displayResponse(err, res) {
     if (!err) {
         res = JSON.parse(res);
         for (i = 0; i < args.prods.length; i += 1) {
-            util.puts("Optimal weight for " + args.prods[i] +
+            console.log("Optimal weight for " + args.prods[i] +
                 " is " + res.pw[i]);
         }
         // Optimal weights: 0.27107,0.2688,0.46013
     } else {
-        util.puts("Optimization failed");
+        console.log("Optimization failed");
     }
 }
 
