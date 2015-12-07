@@ -23,7 +23,7 @@ vows.describe("Login tests").addBatch({
 
         "eval with login ok": function (err, topic) {
             if (!err) {
-                assert(4, topic);
+                assert.equal(4, topic);
             }
         }
     },
@@ -42,7 +42,7 @@ vows.describe("Login tests").addBatch({
 
         "eval with crypted login ok": function (err, topic) {
             if (!err) {
-                assert(3.141592653589793, topic);
+                assert.equal(3.141592653589793, topic);
             }
         }
     },
@@ -63,7 +63,7 @@ vows.describe("Login tests").addBatch({
 
         "eval with login ko": function (err, topic) {
             if (!err) {
-                assert(4, topic);
+                assert.equal(4, topic);
             } else {
                 if (err.code) {
                     assert.equal("ECONNRESET", err.code);
