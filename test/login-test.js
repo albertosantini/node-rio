@@ -28,6 +28,25 @@ vows.describe("Login tests").addBatch({
         }
     },
 
+    "login ok crypted test": {
+        topic: function () {
+            rio.enablePlaybackMode(isEnablePlaybackMode, {
+                fileName: "test/dump/login-ok-crypted-test.bin"
+            });
+
+            rio.e({
+                command: "pi / 2 * 2",
+                callback: this.callback
+            });
+        },
+
+        "eval with crypted login ok": function (err, topic) {
+            if (!err) {
+                assert(3.141592653589793, topic);
+            }
+        }
+    },
+
     "login ko test": {
         topic: function () {
             rio.enablePlaybackMode(isEnablePlaybackMode, {
