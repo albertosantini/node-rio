@@ -10,8 +10,8 @@ a TCP/IP server which allows other programs to use facilities of [R](http://www.
 It supports double, double array, integer, integer array, string, string array,
 boolean, boolean array objects and raw vector (images or files).
 
-It supports also the plain text authentication, if Rserve is configured for that
-capability.
+It supports also the plain text and crypted authentication, if Rserve is
+configured for that capability.
 
 The main goal is to pass a string containing a script call using a JSON object
 as parameter. Then, inside the script, using `RJSONIO` or `jsonlite` package,
@@ -38,6 +38,7 @@ See `examples` directory.
 - `ex5`: How to retrieve a plot.
 - `ex6`: How to call functions already loaded in R session.
 - `ex7`: An example with large data packet.
+- `ex8`: An example to test internal crypt code.
 
 Installation
 ============
@@ -49,7 +50,8 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install rio
 
-Tested with Node.js 5.x and Rserve 1.7.3 (on Windows 10 64) with R 3.2.2.
+Tested with Node.js 5.x and Rserve 1.7.3, on Windows 10 64 with R 3.2.2
+and on Debian Jessie (USB armory) with R 3.1.1.
 
 Don't forget to start [Rserve](http://cran.r-project.org/web/packages/Rserve/).
 For instance, from R console, after installing the package Rserve:
@@ -235,18 +237,18 @@ Contributors
 
 ```
 project  : node-rio
- repo age : 4 years, 4 months
- active   : 101 days
- commits  : 226
- files    : 49
- authors  :
-   197  icebox                  87.2%
-     8  Alberto Santini         3.5%
-     7  Manuel Santillan        3.1%
-     6  albertosantini          2.7%
-     3  Karthik Madathil        1.3%
-     2  Anand Patil             0.9%
-     1  Alex Proca              0.4%
-     1  Farrin Reid             0.4%
-     1  Koichiro Sobue          0.4%
+repo age : 4 years, 4 months
+active   : 107 days
+commits  : 241
+files    : 53
+authors  :
+  212  icebox                  88.0%
+    8  Alberto Santini         3.3%
+    7  Manuel Santillan        2.9%
+    6  albertosantini          2.5%
+    3  Karthik Madathil        1.2%
+    2  Anand Patil             0.8%
+    1  Alex Proca              0.4%
+    1  Farrin Reid             0.4%
+    1  Koichiro Sobue          0.4%
 ```
