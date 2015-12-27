@@ -38,6 +38,7 @@ See `examples` directory.
 - `ex5`: How to retrieve a plot.
 - `ex6`: How to call functions already loaded in R session.
 - `ex7`: An example with large data packet.
+- `ex8`: An example with evaluate defer api.
 
 Installation
 ============
@@ -131,6 +132,12 @@ need to call a function defined in Rserve instance.
         callback: printEcho
     }
 
+evaluateDefer(config) - $e(config)
+----------------------------------
+
+Evaluate a command, returning a promise: config options is the same as
+`evaluate`.
+
 shutdown(options)
 -----------------
 
@@ -193,42 +200,6 @@ It enables playback mode, reading a dump file instead connecting to the server.
     options = {
         fileName: "node-rio-dump.bin"
     }
-
-Promisifying
-============
-
-You can manually promisifying rio.evaluate with your preferred promise library:
-
-```
-var rio = require("rio");
-rio.evaluateAsync = function(params) {
-    return new Promise(function (resolve, reject) {
-        var opts = params || {};
-
-        opts.callback = function(err, result) {
-            if (err) {
-                return reject(err);
-            }
-
-            return resolve(result);
-        };
-
-        return rio.evaluate(params);
-    });
-};
-```
-Then, for instance, in express, you can use it in a route:
-
-```
-...
-return rio.evaluateAsync(req.params.rio)
-    .then(function (data) {
-        return res.send(data.toString()); // or whatever
-    }, function (e) {
-        return res.sendStatus(500);
-    });
-```
-Thanks to @tamaracha to provide the snippet.
 
 
 Contributors
