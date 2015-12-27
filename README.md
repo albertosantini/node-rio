@@ -38,7 +38,6 @@ See `examples` directory.
 - `ex5`: How to retrieve a plot.
 - `ex6`: How to call functions already loaded in R session.
 - `ex7`: An example with large data packet.
-- `ex8`: An example to test internal crypt code.
 
 Installation
 ============

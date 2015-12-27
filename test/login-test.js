@@ -4,7 +4,10 @@
 
 var rio = require("../lib/rio"),
     vows = require("vows"),
-    assert = require("assert");
+    assert = require("assert"),
+
+    // http://sandbox.onlinephpfunctions.com/code/811a2bf6260fe1a30ecfaa0810a9c9ffef838094
+    crypt = require("../lib/crypt"); // internal lib code like php crypt api
 
 var isEnablePlaybackMode = process.env.CI === "true";
 
@@ -75,6 +78,39 @@ vows.describe("Login tests").addBatch({
                     }
                 }
             }
+        }
+    },
+
+    "crypt internal lib test 1": {
+        topic: function () {
+            var text,
+                hash;
+
+            text = "whatever";
+            hash = crypt(text, "secret");
+
+            return hash;
+        },
+
+        "check hash": function (topic) {
+            assert.equal("setiWoCgqSGEw", topic);
+        }
+    },
+
+    "crypt internal lib test 2": {
+        topic: function () {
+            var text,
+                hash;
+
+            text = "test";
+            hash = crypt(text, "SO");
+
+            return hash;
+        },
+
+        "check hash": function (topic) {
+            assert.equal("SOVYikZv1wMH.", topic);
+
         }
     }
 
