@@ -2,4 +2,4 @@
 examples/
 test/
 .travis.yml
-.jshintrc
+.eslintrc.yml
