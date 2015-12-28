@@ -1,188 +1,160 @@
 "use strict";
 
 var rio = require("../lib/rio"),
-    vows = require("vows"),
-    assert = require("assert");
+    test = require("tape");
 
 var isEnablePlaybackMode = process.env.CI === "true";
 
-vows.describe("Basic tests").addBatch({
-    "integer test": {
-        topic: function () {
-            rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/dump/integer-test.bin"
-            });
+test("integer test", function (t) {
+    rio.enablePlaybackMode(isEnablePlaybackMode, {
+        fileName: "test/dump/integer-test.bin"
+    });
 
-            rio.e({
-                command: "as.integer(3)",
-                callback: this.callback
-            });
-        },
-        "get the integer": function (err, topic) {
+    rio.e({
+        command: "as.integer(3)",
+        callback: function (err, res) {
             if (err) {
-                throw err;
+                t.fail(err);
             }
-            assert.equal(3, topic);
+            t.equal(res, 3);
+            t.end();
         }
-    },
+    });
+});
 
-    "integer array test": {
-        topic: function () {
-            rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/dump/integer-array-test.bin"
-            });
+test("integer array test", function (t) {
+    rio.enablePlaybackMode(isEnablePlaybackMode, {
+        fileName: "test/dump/integer-array-test.bin"
+    });
 
-            rio.e({
-                command: "c(as.integer(1), as.integer(2))",
-                callback: this.callback
-            });
-        },
-        "get the integer array": function (err, topic) {
+    rio.e({
+        command: "c(as.integer(1), as.integer(2))",
+        callback: function (err, res) {
             if (err) {
-                throw err;
+                t.fail(err);
             }
-            assert.deepEqual([1, 2], topic);
+            t.deepEqual(res, [1, 2]);
+            t.end();
         }
-    },
-    "double number test": {
-        topic: function () {
-            rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/dump/double-test.bin"
-            });
+    });
+});
 
-            rio.e({
-                command: "pi / 2 * 2",
-                callback: this.callback
-            });
-        },
+test("double number test", function (t) {
+    rio.enablePlaybackMode(isEnablePlaybackMode, {
+        fileName: "test/dump/double-test.bin"
+    });
 
-        "get the double number": function (err, topic) {
+    rio.e({
+        command: "pi / 2 * 2",
+        callback: function (err, res) {
             if (err) {
-                throw err;
+                t.fail(err);
             }
-            assert.equal(3.141592653589793, topic);
+            t.equal(res, 3.141592653589793);
+            t.end();
         }
-    },
+    });
+});
 
-    "double number array test": {
-        topic: function () {
-            rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/dump/double-array-test.bin"
-            });
+test("double number array test", function (t) {
+    rio.enablePlaybackMode(isEnablePlaybackMode, {
+        fileName: "test/dump/double-array-test.bin"
+    });
 
-            rio.e({
-                command: "c(1, 2)",
-                callback: this.callback
-            });
-        },
-
-        "get the double number array": function (err, topic) {
+    rio.e({
+        command: "c(1, 2)",
+        callback: function (err, res) {
             if (err) {
-                throw err;
+                t.fail(err);
             }
-            assert.deepEqual([1, 2], topic);
+            t.deepEqual(res, [1, 2]);
+            t.end();
         }
-    },
+    });
+});
 
-    "string test": {
-        topic: function () {
-            rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/dump/string-test.bin"
-            });
+test("string test", function (t) {
+    rio.enablePlaybackMode(isEnablePlaybackMode, {
+        fileName: "test/dump/string-test.bin"
+    });
 
-            rio.e({
-                command: "as.character('Hello World')",
-                callback: this.callback
-            });
-        },
-
-        "get the string": function (err, topic) {
+    rio.e({
+        command: "as.character('Hello World')",
+        callback: function (err, res) {
             if (err) {
-                throw err;
+                t.fail(err);
             }
-            assert.equal("Hello World", topic);
+            t.equal(res, "Hello World");
+            t.end();
         }
-    },
+    });
+});
 
-    "string array test": {
-        topic: function () {
-            rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/dump/string-array-test.bin"
-            });
+test("string array test", function (t) {
+    rio.enablePlaybackMode(isEnablePlaybackMode, {
+        fileName: "test/dump/string-array-test.bin"
+    });
 
-            rio.e({
-                command: "c('a', 'b')",
-                callback: this.callback
-            });
-        },
-
-        "get the string array": function (err, topic) {
+    rio.e({
+        command: "c('a', 'b')",
+        callback: function (err, res) {
             if (err) {
-                throw err;
+                t.fail(err);
             }
-            assert.deepEqual(["a", "b"], topic);
+            t.deepEqual(res, ["a", "b"]);
+            t.end();
         }
-    },
+    });
+});
 
-    "boolean test": {
-        topic: function () {
-            rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/dump/boolean-test.bin"
-            });
+test("boolean test", function (t) {
+    rio.enablePlaybackMode(isEnablePlaybackMode, {
+        fileName: "test/dump/boolean-test.bin"
+    });
 
-            rio.e({
-                command: "TRUE",
-                callback: this.callback
-            });
-        },
-
-        "get the boolean value": function (err, topic) {
+    rio.e({
+        command: "TRUE",
+        callback: function (err, res) {
             if (err) {
-                throw err;
+                t.fail(err);
             }
-            assert.equal(true, topic);
+            t.equal(res, true);
+            t.end();
         }
-    },
+    });
+});
 
-    "boolean array test": {
-        topic: function () {
-            rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/dump/boolean-array-test.bin"
-            });
+test("boolean array test", function (t) {
+    rio.enablePlaybackMode(isEnablePlaybackMode, {
+        fileName: "test/dump/boolean-array-test.bin"
+    });
 
-            rio.e({
-                command: "c(TRUE, FALSE)",
-                callback: this.callback
-            });
-        },
-
-        "get the boolean array": function (err, topic) {
+    rio.e({
+        command: "c(TRUE, FALSE)",
+        callback: function (err, res) {
             if (err) {
-                throw err;
+                t.fail(err);
             }
-            assert.deepEqual([true, false], topic);
+            t.deepEqual(res, [true, false]);
+            t.end();
         }
-    },
+    });
+});
 
-    "utf8 string test": {
-        topic: function () {
-            rio.enablePlaybackMode(isEnablePlaybackMode, {
-                fileName: "test/dump/string-test.bin"
-            });
+test("utf8 string test", function (t) {
+    rio.enablePlaybackMode(isEnablePlaybackMode, {
+        fileName: "test/dump/string-test.bin"
+    });
 
-            rio.e({
-                command: "# แผ่นดินฮั่นเสื่อมโทรมแสน\n" +
-                    "as.character('Hello World')",
-                callback: this.callback
-            });
-        },
-
-        "get the utf8 string": function (err, topic) {
+    rio.e({
+        command: "# แผ่นดินฮั่นเสื่อมโทรมแสน\n" +
+            "as.character('Hello World')",
+        callback: function (err, res) {
             if (err) {
-                throw err;
+                t.fail(err);
             }
-            assert.equal("Hello World", topic);
+            t.equal(res, "Hello World");
+            t.end();
         }
-    }
-
-}).export(module);
+    });
+});
