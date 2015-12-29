@@ -19,8 +19,8 @@
     },
     "scripts": {
         "test": "npm run lint && npm run tape",
-        "lint": "node node_modules/eslint/bin/eslint ./**/*.js",
-        "tape": "node node_modules/tape/bin/tape test/**/*-test.js"
+        "lint": "eslint ./**/*.js",
+        "tape": "tape test/**/*-test.js"
 
     },
     "devDependencies": {
