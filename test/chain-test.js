@@ -10,9 +10,7 @@ test("chain test", function (t) {
 
     rio.enablePlaybackMode(isEnablePlaybackMode, {
         fileName: "test/dump/chain-test.bin"
-    });
-
-    rio.e({
+    }).e({
         command: "2 * 2",
         callback: function (err, res) {
             if (err) {
