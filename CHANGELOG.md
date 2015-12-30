@@ -1,3 +1,9 @@
+2.4.0 / 2015-12-30
+==================
+
+* Added chaining support.
+* Changed from vows tests to tape ones.
+
 2.3.0 / 2015-12-27
 ==================
 

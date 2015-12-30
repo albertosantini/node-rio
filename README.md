@@ -18,7 +18,7 @@ as parameter. Then, inside the script, using `RJSONIO` or `jsonlite` package,
 deserializing the JSON object, calling a method, serializing the response and
 returning to Node.js.
 
-Example
+Examples
 ========
 
     var rio = require("rio");
@@ -29,6 +29,18 @@ Example
     rio.e({command: "c('a', 'b')"});
     rio.e({command: "Sys.sleep(5); 11"})
 
+    rio.$e({
+        command: "pi / 2 * 2"
+    }).then(function (res) {
+        console.log(res);
+    });
+
+    rio.e({
+        command: "2 + 2"
+    }).e({
+        command: "3 + 3"
+    });
+
 See `examples` directory.
 
 - `ex1`: Getting started with `evaluate` api.
@@ -38,7 +50,8 @@ See `examples` directory.
 - `ex5`: How to retrieve a plot.
 - `ex6`: How to call functions already loaded in R session.
 - `ex7`: An example with large data packet.
-- `ex8`: An example with evaluate defer api.
+- `ex8`: An example with `evaluateDefer` api.
+- `ex9`: An example chaining `evaluate` api.
 
 Installation
 ============
@@ -207,18 +220,18 @@ Contributors
 
 ```
 project  : node-rio
- repo age : 4 years, 5 months
- active   : 108 days
- commits  : 244
- files    : 54
- authors  :
-   215  icebox                  88.1%
-     8  Alberto Santini         3.3%
-     7  Manuel Santillan        2.9%
-     6  albertosantini          2.5%
-     3  Karthik Madathil        1.2%
-     2  Anand Patil             0.8%
-     1  Alex Proca              0.4%
-     1  Farrin Reid             0.4%
-     1  Koichiro Sobue          0.4%
+repo age : 4 years, 5 months
+active   : 111 days
+commits  : 256
+files    : 59
+authors  :
+  227  icebox                  88.7%
+    8  Alberto Santini         3.1%
+    7  Manuel Santillan        2.7%
+    6  albertosantini          2.3%
+    3  Karthik Madathil        1.2%
+    2  Anand Patil             0.8%
+    1  Alex Proca              0.4%
+    1  Farrin Reid             0.4%
+    1  Koichiro Sobue          0.4%
 ```
