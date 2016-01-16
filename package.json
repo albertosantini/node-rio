@@ -19,7 +19,7 @@
     },
     "scripts": {
         "test": "npm run lint && npm run tape",
-        "lint": "eslint lib/**/*.js examples/**/*.js eslint test/**/*.js",
+        "lint": "eslint lib/**/*.js examples/**/*.js test/**/*.js",
         "tape": "tape test/**/*-test.js"
 
     },
