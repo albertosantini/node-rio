@@ -19,13 +19,13 @@
     },
     "scripts": {
         "test": "npm run lint && npm run tape",
-        "lint": "eslint ./**/*.js",
+        "lint": "eslint lib/**/*.js examples/**/*.js eslint test/**/*.js",
         "tape": "tape test/**/*-test.js"
 
     },
     "devDependencies": {
-        "eslint": "~1.10.3",
-        "eslint-config-eslint": "~1.0.1",
+        "eslint": "~2.0.0-beta.1",
+        "eslint-config-eslint": "~2.0.0",
         "tape": "~4.4.0"
     }
 }
