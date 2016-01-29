@@ -56,7 +56,7 @@ See `examples` directory.
 Installation
 ============
 
-[![NPM](https://nodei.co/npm/rio.png?downloads=true)](https://nodei.co/npm/rio/)
+[![NPM](https://nodei.co/npm/rio.png?downloads=true&downloadRank=true)](https://nodei.co/npm/rio/)
 [![NPM](https://nodei.co/npm-dl/rio.png)](https://nodei.co/npm/rio/)
 
 To install with [npm](http://github.com/isaacs/npm):
