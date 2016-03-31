@@ -64,7 +64,7 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install rio
 
-Tested with Node.js 5.x and Rserve 1.7.3, on Windows 10 64 with R 3.2.2
+Tested with Node.js 5.x and Rserve 1.7.3, on Windows 10 64bit with R 3.2.4
 and on Debian Jessie (USB armory) with R 3.1.1.
 
 Don't forget to start [Rserve](http://cran.r-project.org/web/packages/Rserve/).
@@ -221,17 +221,17 @@ Contributors
 
 ```
 project  : node-rio
-repo age : 4 years, 5 months
-active   : 111 days
-commits  : 256
-files    : 59
+repo age : 4 years, 8 months
+active   : 122 days
+commits  : 272
+files    : 61
 authors  :
-  227  icebox                  88.7%
-    8  Alberto Santini         3.1%
-    7  Manuel Santillan        2.7%
-    6  albertosantini          2.3%
-    3  Karthik Madathil        1.2%
-    2  Anand Patil             0.8%
+  243  icebox                  89.3%
+    8  Alberto Santini         2.9%
+    7  Manuel Santillan        2.6%
+    6  albertosantini          2.2%
+    3  Karthik Madathil        1.1%
+    2  Anand Patil             0.7%
     1  Alex Proca              0.4%
     1  Farrin Reid             0.4%
     1  Koichiro Sobue          0.4%
