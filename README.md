@@ -52,6 +52,7 @@ See `examples` directory.
 - `ex7`: An example with large data packet.
 - `ex8`: An example with `evaluateDefer` api.
 - `ex9`: An example chaining `evaluate` api.
+- `ex10`: How to evaluate a matrix, using JSON serialization.
 
 Installation
 ============
