@@ -1,3 +1,10 @@
+2.4.1 / 2016-03-31
+==================
+
+* Added matrix example using JSON serialization.
+* Added check params test.
+* Updated deps.
+
 2.4.0 / 2015-12-30
 ==================
 
