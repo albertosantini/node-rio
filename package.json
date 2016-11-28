@@ -24,8 +24,8 @@
 
     },
     "devDependencies": {
-        "eslint": "^3.10.2",
+        "eslint": "^3.11.0",
         "eslint-config-eslint": "~3.0.0",
-        "tape": "~4.6.2"
+        "tape": "~4.6.3"
     }
 }
