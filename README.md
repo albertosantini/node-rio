@@ -53,6 +53,7 @@ See `examples` directory.
 - `ex8`: An example with `evaluateDefer` api.
 - `ex9`: An example chaining `evaluate` api.
 - `ex10`: How to evaluate a matrix, using JSON serialization.
+- `ex11`: How to manage strings with single and double quotes.
 
 Installation
 ============
