@@ -2,7 +2,6 @@ RIO
 ======
 [![Build Status](https://travis-ci.org/albertosantini/node-rio.png)](https://travis-ci.org/albertosantini/node-rio)
 [![NPM version](https://badge.fury.io/js/rio.png)](http://badge.fury.io/js/rio)
-[![NGN Dependencies](https://david-dm.org/albertosantini/node-rio.png)](https://david-dm.org/albertosantini/node-rio)
 
 RIO, R Input Output, connects an app to [Rserve](http://www.rforge.net/Rserve/),
 a TCP/IP server which allows other programs to use facilities of [R](http://www.r-project.org).
