@@ -21,7 +21,6 @@
         "test": "npm run lint && npm run tape",
         "lint": "eslint lib/**/*.js examples/**/*.js test/**/*.js",
         "tape": "tape test/**/*-test.js"
-
     },
     "devDependencies": {
         "eslint": "^3.19.0",
