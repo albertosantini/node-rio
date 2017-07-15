@@ -55,9 +55,14 @@ getOptimalPortfolio(args, function (res) {
         console.log("Portfolio performances: " + res.perf);
 
         assert.deepEqual([0.27107, 0.2688, 0.46013], res.optim.pw);
-        assert.deepEqual([0.0000000,
-            -0.0510010, -0.0131090, -0.0039485, 0.0173990, 0.0692240],
-            res.perf.slice(0, 6));
+        assert.deepEqual([
+            0.0000000,
+            -0.0510010,
+            -0.0131090,
+            -0.0039485,
+            0.0173990,
+            0.0692240
+        ], res.perf.slice(0, 6));
     }
 
 }, {
