@@ -4,13 +4,10 @@ env:
     node: true
     es6: true
 
-extends: "eslint"
+extends:
+    "eslint:recommended"
 
 rules:
-    callback-return: 0
-    new-cap: [2, {capIsNew: false}]
-    no-invalid-this: 0
-    no-use-before-define: [2, "nofunc"]
-    require-jsdoc: 0
-    space-before-function-paren: [2, {"anonymous": "always", "named": "never"}]
-    spaced-comment: [0, "always", { exceptions: ["-"]}]
+    no-console: "off"
+    new-cap: ["error", {capIsNew: false}]
+    no-use-before-define: ["error", "nofunc"]
