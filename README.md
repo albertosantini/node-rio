@@ -217,19 +217,19 @@ Contributors
 ============
 
 ```
-project  : node-rio
-repo age : 4 years, 8 months
-active   : 122 days
-commits  : 272
-files    : 61
-authors  :
-  243  icebox                  89.3%
-    8  Alberto Santini         2.9%
-    7  Manuel Santillan        2.6%
-    6  albertosantini          2.2%
-    3  Karthik Madathil        1.1%
-    2  Anand Patil             0.7%
-    1  Alex Proca              0.4%
-    1  Farrin Reid             0.4%
-    1  Koichiro Sobue          0.4%
+ project  : node-rio
+ repo age : 7 years
+ active   : 139 days
+ commits  : 299
+ files    : 65
+ authors  :
+   267  icebox                  89.3%
+    11  Alberto Santini         3.7%
+     7  Manuel Santillan        2.3%
+     6  albertosantini          2.0%
+     3  Karthik Madathil        1.0%
+     2  Anand Patil             0.7%
+     1  Alex Proca              0.3%
+     1  Farrin Reid             0.3%
+     1  Koichiro Sobue          0.3%
 ```
