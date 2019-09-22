@@ -15,7 +15,7 @@
     },
     "dependencies": {
         "binary": "~0.3.0",
-        "hexy": "^0.2.11"
+        "hexy": "^0.3.0"
     },
     "scripts": {
         "test": "npm run lint && npm run tape",
@@ -23,7 +23,7 @@
         "tape": "tape test/**/*-test.js"
     },
     "devDependencies": {
-        "eslint": "^4.19.1",
-        "tape": "^4.9.0"
+        "eslint": "^6.4.0",
+        "tape": "^4.11.0"
     }
 }
